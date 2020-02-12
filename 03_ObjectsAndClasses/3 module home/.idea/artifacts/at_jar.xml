@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Сat:jar">
-    <output-path>$PROJECT_DIR$/out</output-path>
-    <root id="archive" name="Сat.jar">
-      <element id="module-output" name="Сat" />
-    </root>
-  </artifact>
-</component>
