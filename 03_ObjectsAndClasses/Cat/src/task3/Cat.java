@@ -48,7 +48,7 @@ public class Cat
         if (weight > maxWeight) {count = count - 1;}
     }
     else {
-        System.out.printf("Кошка взорвалась, операцион не возможен");}
+        System.out.printf("Кошка взорвалась, операцион не возможен" );}
     }
 
     public void drink(Double amount) {

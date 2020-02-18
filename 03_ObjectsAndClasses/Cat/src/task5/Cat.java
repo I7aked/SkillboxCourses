@@ -18,7 +18,7 @@ public class Cat
         count = count + 1;
     }
 
-    public  Cat(double weight)
+    public  Cat(double weight )
     { this();
     this.weight = weight;
     }

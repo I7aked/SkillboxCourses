@@ -33,6 +33,7 @@ public class RoadController1
                 continue;
             }
 
+
             //Проверяем высоту и массу автомобиля, вычисляем стоимость проезда
             int price = calculatePrice(car); //целая переменная, int
             if(price == -1) {

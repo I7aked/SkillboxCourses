@@ -12,7 +12,7 @@ public class Cat
 
     public Cat()
     {
-        weight = 1500.0 + 3000.0 * Math.random();
+        weight =  1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         minWeight = 1000.0;
         maxWeight = 9000.0;
@@ -34,7 +34,7 @@ public class Cat
     }
 
     public void meow()
-    {   weight = weight - 1;
+    {   weight = weight - 1 ;
       }
 
     public Double weightFood()

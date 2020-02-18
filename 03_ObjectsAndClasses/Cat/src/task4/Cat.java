@@ -14,7 +14,6 @@ public class Cat
 
     public void setColorCat(colorCat type)
     {
-
     }
     public Cat()
     {

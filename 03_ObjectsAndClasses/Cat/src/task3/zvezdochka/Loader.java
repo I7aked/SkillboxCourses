@@ -18,7 +18,7 @@ public class Loader
         System.out.println(feya.getWeight()); // Выдаём вес фёдора и других кошек ниже
         System.out.println(); // пустая строка
 
-        for (int i = 1; i < 50; i++) // Счётчик для кормёшки кошки
+        for (int i = 1; i < 50; i++ ) // Счётчик для кормёшки кошки
         {
             if (zhuzha.catAlive() == false ) { // проверка условия жизни кошки
                 System.out.println("Взорвавшуюся кошку не покормить");
@@ -29,7 +29,7 @@ public class Loader
         System.out.println("Жужа вес =" + zhuzha.getWeight()); // пустая строка
         System.out.println(); // пустая строка
 
-        for (int i = 1; i < 50; i++) // Счётчик для похождений в туалет
+        for (int i = 1; i < 50; i++ ) // Счётчик для похождений в туалет
         {
             if (feya.catAlive() == false ) // проверка условия жизни кошки
             {System.out.println("Мёртвой кошке не нужен туалет");

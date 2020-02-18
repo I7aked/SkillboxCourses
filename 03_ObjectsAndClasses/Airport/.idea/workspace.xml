@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b260c46-10a8-4ff6-b13e-e84490070929" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ДЗ 8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cat/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Cat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task2/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task2/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task2/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task2/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task3/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task3/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task3/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task3/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task3/zvezdochka/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task3/zvezdochka/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task3/zvezdochka/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task3/zvezdochka/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task4/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task4/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task4/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task4/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task4/colorCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task4/colorCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task5/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task5/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task5/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task5/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/CatColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/CatColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/RoadController1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/RoadController1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/core/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/core/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cat/src/task6/core/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cat/src/task6/core/Car.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,22 +95,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="751" y="274" key="FileChooserDialogImpl/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581537323201" />
-    <state width="1340" height="252" key="GridCell.Tab.0.bottom" timestamp="1581537453680">
+    <state width="1340" height="252" key="GridCell.Tab.0.bottom" timestamp="1582038534019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="252" key="GridCell.Tab.0.bottom/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581537453680" />
-    <state width="1340" height="252" key="GridCell.Tab.0.center" timestamp="1581537453679">
+    <state width="1340" height="252" key="GridCell.Tab.0.bottom/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582038534019" />
+    <state width="1340" height="252" key="GridCell.Tab.0.center" timestamp="1582038534018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="252" key="GridCell.Tab.0.center/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581537453679" />
-    <state width="1340" height="252" key="GridCell.Tab.0.left" timestamp="1581537453679">
+    <state width="1340" height="252" key="GridCell.Tab.0.center/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582038534018" />
+    <state width="1340" height="252" key="GridCell.Tab.0.left" timestamp="1582038534018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="252" key="GridCell.Tab.0.left/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581537453679" />
-    <state width="1340" height="252" key="GridCell.Tab.0.right" timestamp="1581537453680">
+    <state width="1340" height="252" key="GridCell.Tab.0.left/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582038534018" />
+    <state width="1340" height="252" key="GridCell.Tab.0.right" timestamp="1582038534019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="252" key="GridCell.Tab.0.right/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1581537453680" />
+    <state width="1340" height="252" key="GridCell.Tab.0.right/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582038534019" />
     <state x="525" y="107" key="SettingsEditor" timestamp="1581184093178">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

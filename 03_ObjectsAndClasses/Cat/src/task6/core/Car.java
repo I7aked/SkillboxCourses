@@ -2,7 +2,7 @@ package task6.core;
 
 public class Car
 {
-    public String number;
+    public String number ;
     public int height;
     public double weight;
     public boolean hasVehicle;

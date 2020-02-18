@@ -19,7 +19,7 @@ public class Cat {
     public void pee() {
         if (getStatus() != "Dead") {
             weight = weight - 250;
-            if (weight < minWeight) {
+            if (weight < minWeight ) {
                 count = count - 1;
             }
         } else {

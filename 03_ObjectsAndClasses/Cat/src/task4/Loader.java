@@ -12,7 +12,7 @@ public class Loader
         Cat zhuzha = new Cat(); // описываем кота
         zhuzha.setColorCat(colorCat.ORANGE); //Задаём Жуже оранжевый цвет
 
-        System.out.println("Глaз У котиков примерно по  " + Cat.EYE_CAT);
+        System.out.println("Глaз У котиков примерно по  " + Cat.EYE_CAT );
         System.out.println("Минимальный вес котика " + Cat.MIN_WEIGHT); //
         System.out.println("Максимальный вес котика " + Cat.MAX_WEIGHT); //
         System.out.println();

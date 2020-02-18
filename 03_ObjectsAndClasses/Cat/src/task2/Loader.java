@@ -18,7 +18,7 @@ public class Loader
         for (int i=1;i<6;i++) { fedor.feed(vesFeed); }
 
         System.out.println("Fedor съел " + fedor.weightFood() + "g"); // пустая строка
-        System.out.println("Fedor weight " + fedor.getWeight() + "g"); // пустая строка
+        System.out.println("Fedor weight " + fedor.getWeight() + "g" ); // пустая строка
 
 
         for (int i=1;i<6;i++) { fedor.pee(); }

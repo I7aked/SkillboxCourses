@@ -5,5 +5,6 @@ public enum CatColor
     BLACK,
     WHITE,
     GREY,
-    ORANGE
+    ORANGE,
+    PURPLE
 }

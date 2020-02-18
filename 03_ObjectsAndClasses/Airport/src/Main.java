@@ -13,7 +13,7 @@ public class Main
         airport.getTerminals();
 
         kolichestvo = airport.getAllAircrafts();
-        kolichestvo.size();
+        kolichestvo.size() ;
 
         System.out.println(airport.getAllAircrafts());
         System.out.println(airport.getTerminals());

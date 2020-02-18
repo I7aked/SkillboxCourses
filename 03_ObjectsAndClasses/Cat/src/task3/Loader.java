@@ -25,7 +25,7 @@ public class Loader
         System.out.println(); // пустая строка
         System.out.println("Количество котиков после взрыва одной " + Cat.getCount()); // Выдаём вес фёдора и других кошек ниже
 
-        while (zhuzha.getStatus() != "Dead") // Условие на окончание цикла по взрыву кошки
+        while (zhuzha.getStatus() != "Dead" ) // Условие на окончание цикла по взрыву кошки
         {
             zhuzha.pee(); // кормим Жужу
         }
