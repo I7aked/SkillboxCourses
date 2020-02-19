@@ -10,13 +10,13 @@ public class Loader
 
         double vesFeed = 50; //g добавляет кошка как поест
 
-        Cat fedor = new Cat(6000 ); // описываем кота Фёдора
+        Cat fedor = new Cat(4321 ); // описываем кота Фёдора
         System.out.println(" Вес Фёдора " + fedor.getWeight());
 
 
         System.out.println(); // пустая строка
 
-        Cat feya =  getKitten(1100);
+        Cat feya =  getKitten();
 
         System.out.println("feya ves " + feya.getWeight()); // пустая строка
         System.out.printf("" );
@@ -25,4 +25,13 @@ public class Loader
 
     private static Cat getKitten(double weight)  { return new Cat(weight);}
 
+    private static Cat getKitten(){
+
+        return getKitten( (1000 + 500 * Math.random()));
+    }
+
+
 }
+
+
+

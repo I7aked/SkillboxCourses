@@ -18,9 +18,9 @@ public class Cat
         count = count + 1;
     }
 
-    public  Cat(double weight )
+    public  Cat(double originWeight )
     { this();
-    this.weight = weight;
+    this.originWeight = originWeight;
     }
 
     public void pee()
@@ -54,7 +54,7 @@ public class Cat
 
     public Double getWeight()
     {
-        return weight;
+        return originWeight;
     }
 
     public  String getStatus() {

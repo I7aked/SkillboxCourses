@@ -16,12 +16,12 @@ public class Car
                 ":\n\tВысота: " + height + " мм\n\tМасса: " + weight + " кг";
     }
      // Геттэры
-    private String number(){return number;}
-    private int height()
+    private String getNumber(){return number;}
+    private int getHeight()
     {
          return height;
     }
-    private double weight()
+    private double getWeight()
     {
         return weight;
     }
