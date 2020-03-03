@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3566954-15db-468d-82d7-9b60a8957e26" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments 4.2/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task5/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task5/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task5/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task5/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task6/core/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task6/core/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/IntegerExperiments.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/src/Container.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/src/home_work_4_2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/src/home_work_4_3/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments/src/zvezdochka/.gitkeep" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,11 +36,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
-  </component>
   <component name="ProjectId" id="1XimWtbi5NSlckJLvzz3phUkpbj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +47,7 @@
     <property name="FullScreen" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../04_NumbersStringsAndDates/IntegerExperiments 4.1" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -210,10 +213,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="712" y="282" key="FileChooserDialogImpl" timestamp="1582038513756">
+    <state x="712" y="282" key="FileChooserDialogImpl" timestamp="1583241285923">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="712" y="282" key="FileChooserDialogImpl/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582038513756" />
+    <state x="712" y="282" key="FileChooserDialogImpl/-1920.-100.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1583241285923" />
     <state width="1340" height="252" key="GridCell.Tab.0.bottom" timestamp="1582124879350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

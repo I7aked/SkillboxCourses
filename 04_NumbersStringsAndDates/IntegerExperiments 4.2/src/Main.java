@@ -1,5 +1,3 @@
-package home_work_4_2;
-
 public class Main
 {
     public static void main(String[] args) {
@@ -20,11 +18,11 @@ public class Main
         System.out.println();
 
         System.out.println(Double.MAX_VALUE + "= Max double");
-        System.out.println(Double.MIN_VALUE + "= Min double");
+        System.out.println( - Double.MAX_VALUE + "= Min double");
         System.out.println();
 
         System.out.println(Float.MAX_VALUE + "= Max float");
-        System.out.println(Float.MIN_VALUE + "= Min float");
+        System.out.println( - Float.MAX_VALUE + "= Min float");
         System.out.println();
 
 
