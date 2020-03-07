@@ -1,13 +1,17 @@
 .DS_Store
-.idea
+.idea/
 *.iml
 *.xml
+*/out/
+
 03_ObjectsAndClasses/Cat/.idea/workspace.xml
-.out
 03_ObjectsAndClasses/Cat/out/
 03_ObjectsAndClasses/Cat/.idea/workspace.xml
 03_ObjectsAndClasses/Airport/out/
+
 04_NumbersStringsAndDates/IntegerExperiments/out/
 04_NumbersStringsAndDates/IntegerExperiments 4.2/out/
 04_NumbersStringsAndDates/IntegerExperiments 4.3/out/
 
+04_NumbersStringsAndDates/StringExperiments/*
+04_NumbersStringsAndDates/StringExperiments/src/Loader.java
