@@ -5,10 +5,10 @@ public class Loader
         String text = "Вася заработал 5060 рублей, Петя - 7543 рубля, а Маша - 30330 рублей";
         String zpVasya = "";
         String zpMasha = "";
+        int k =0;
         int summ = 0;
         int i = 0;
         int j ;
-
 
 
            while (text.codePointAt(i) > 58 || text.codePointAt(i) < 47)//Проверка на является ли символ не цифрой
