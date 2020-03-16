@@ -8,7 +8,10 @@ public class FioRegular
         Scanner scanner = new Scanner(System.in);
         fio = scanner.nextLine();
 
-        String[] sentences = fio.split("\\s");
+        fio = fio.replaceAll("[^А-Я](\\w*)", "");
+        System.out.println(fio);
+
+        String[] sentences = fio.split("([А-Я]([\\w*]))");
 
 
         if (i <= sentences.length)// проверяем больше ли количество получившихся разбиений, чем необходимые нам 3 значения
@@ -36,6 +39,9 @@ public class FioRegular
             System.out.println("Отчество ");
         }
 
+        for (int k = 0;k < sentences.length;k++){
+            System.out.println(sentences[k]);
+        }
 
         }
 
