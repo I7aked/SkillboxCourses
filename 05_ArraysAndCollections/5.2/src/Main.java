@@ -7,6 +7,7 @@ public class Main {
         boolean ciklYslovie = true;
         String vvodKonsol = "";
         String mainCommand = "";
+        int  schetchik = 0;
 
         Character elementListChange;
         ArrayList<String> commandList = new ArrayList<>(){{
@@ -26,11 +27,10 @@ public class Main {
         }};
 
         for(String item:productList)
-            {
-                System.out.print(item);
-                System.out.print(" ");
+            { schetchik++;
+                System.out.println(schetchik + " " + item);
             }
-        System.out.println();
+
         System.out.println("Список команд");
 
         for(String item:commandList)
@@ -38,14 +38,16 @@ public class Main {
             System.out.println(item);
         }
         while (ciklYslovie) {
+            schetchik = 0;
             System.out.println("Введите команду установленного образца");
 
             Scanner scanner = new Scanner(System.in);
             String commandListChange = scanner.nextLine();
 
             vvodKonsol=commandListChange.replaceAll("(([A-Z]+\\s)(\\d)?)",""); //Определяем вводимый продукт
+            vvodKonsol = vvodKonsol.trim();
 
-            mainCommand = commandListChange.replaceAll("(((\\d)?(\\s)+[A-Z][a-z]+).*)|(\\d?)","");//Определяем выполняемую команду
+            mainCommand = commandListChange.replaceAll("(((\\d)?(\\s)+[A-Z]*[a-z]*).*)|(((\\d)?(\\s)+[a-z]+).*)|(\\d?)","");//Определяем выполняемую команду
 
             mainCommand = mainCommand.trim();
             commandListChange = commandListChange.replaceAll("([A-Z]+\\s)?","");//Убирем команду из введённой строки
@@ -76,8 +78,9 @@ public class Main {
                     break;
                 case "LIST":
                     for (String item: productList){
-                        System.out.print(item);
-                        System.out.print(" ");
+                        schetchik++;
+                        System.out.println(schetchik +" " + item);
+
                     }
                     System.out.println();
                     break;
