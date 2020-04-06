@@ -36,7 +36,7 @@ public class Main {
             vvodKonsol = vvodKonsol.replaceAll("([A-Z]+\\s)?", "");
             vvodKonsol = vvodKonsol.trim();
 
-            correctMail = vvodKonsol.replaceAll("([A-Z]?[a-z]+((\\.)?)[a-z]+(\\@)([a-z]+)\\.([a-z]{2})([a-z]+)?)", "correct");
+            correctMail = vvodKonsol.replaceAll(".+@.+\\..+", "correct");
             chekCorrectMail = correctMail.equals("correct");//проверка что именно е-майл введён
 
             if (chekCorrectMail && firstCommand.equals("ADD")) //Проверка правильного емайл и команды ADD
