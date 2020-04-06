@@ -55,7 +55,7 @@ public class Main {
 
             if (Character.isDigit(commandListChange.charAt(0)))// Проверяем есть ли номер строки в вводимой команде
             {
-                numberCommand = Integer.parseInt(commandListChange.substring(0, 1));//Записываем первую цифру переменную
+                numberCommand = Integer.parseInt(commandListChange.substring(0, 1))- 1;//Записываем первую цифру переменную
 //                commandListChange = commandListChange.replaceAll("[0-9]", "");//Стирем первую цифру с нашей переменной
 //                commandListChange = commandListChange.trim();//Удаляем все незначащие пробелы
             }
