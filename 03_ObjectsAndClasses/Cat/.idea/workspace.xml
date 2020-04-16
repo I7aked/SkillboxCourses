@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3566954-15db-468d-82d7-9b60a8957e26" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/out/production/5_1_Homework/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/out/production/5_1_Homework/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/out/production/5_1_Homework/Third.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/out/production/5_1_Homework/Third.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../05_ArraysAndCollections/5_1_Homework/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="d3566954-15db-468d-82d7-9b60a8957e26" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
