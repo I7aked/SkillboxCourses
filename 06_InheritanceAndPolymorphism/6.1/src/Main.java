@@ -2,33 +2,36 @@ import BankAccount.DepozitAccount;
 import BankAccount.KardAccount;
 import BankAccount.RaschetAccount;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
+import java.util.Calendar;
 import java.util.Date;
 
 public class Main {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args)  {
 
-
-
+        Calendar calendar = Calendar.getInstance();
+        Date date = calendar.getTime();
 
         RaschetAccount vasya = new RaschetAccount(0);
-        vasya.PopolnenieBalansa(500);
-        vasya.SnytieSBalansa(200);
+        vasya.replenishmentMoney(500);
+        vasya.withdrawalMoney(200);
 
         System.out.println("Vasya =" + vasya.getAccountMoney());
 
-        KardAccount petya = new KardAccount(0);
-        petya.setAccountMoney(500);
-        petya.SnytieSBalansa(200);
+        KardAccount petya = new KardAccount(300);
+        petya.withdrawalMoney(200);
         System.out.println("Petya =" + petya.getAccountMoney());
 
         DepozitAccount fedya = new DepozitAccount(0);
-        fedya.setAccountMoney(1000);
-        fedya.PopolnenieBalansa(200,"12.12.1990");
-        fedya.SnytieSBalansa(100,"20.12.1990");
-        System.out.println(" Fedya =" + fedya.getAccountMoney());
+        fedya.replenishmentMoney(200,date);
+
+        calendar.setTime(date);
+        calendar.roll(Calendar.MONTH,+3);
+        date = calendar.getTime();
+
+        fedya.withdrawalMoney(100,date);
+
 
     }
 }

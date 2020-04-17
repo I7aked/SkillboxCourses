@@ -7,10 +7,9 @@ public class KardAccount extends RaschetAccount {
         super(accountMoney);
     }
 
-    public void SnytieSBalansa(double summ)
+    public void withdrawalMoney (double summ)
     {
-        this.summ = summ;
-        accountMoney = accountMoney - summ*(1.01) ;
+       accountMoney = accountMoney - summ*(1.01) ;
     }
 
 

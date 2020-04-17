@@ -1,26 +1,22 @@
 package BankAccount;
 
-import java.util.Scanner;
 
 public class RaschetAccount {
 
    public double accountMoney;
-   public double summ;
 
    public RaschetAccount(double accountMoney)
    {
        this.accountMoney = accountMoney;
    }
 
-    public void PopolnenieBalansa(double summ)
+    public void replenishmentMoney(double summ)
     {
-        this.summ = summ;
         accountMoney = accountMoney + summ;
     }
 
-    public void SnytieSBalansa(double summ)
+    public void withdrawalMoney (double summ)
     {
-        this.summ = summ;
         accountMoney = accountMoney - summ ;
     }
 
@@ -29,8 +25,4 @@ public class RaschetAccount {
         return accountMoney;
     }
 
-    public void setAccountMoney(double accountMoney)
-    {
-        this.accountMoney = accountMoney;
-    }
 }
