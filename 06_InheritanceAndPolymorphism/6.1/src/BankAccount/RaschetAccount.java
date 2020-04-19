@@ -1,7 +1,11 @@
 package BankAccount;
 
 
+import java.util.Calendar;
+
 public class RaschetAccount {
+
+    Calendar replenishmentAccountDate = Calendar.getInstance();
 
    public double accountMoney;
 
@@ -11,7 +15,9 @@ public class RaschetAccount {
    }
 
     public void replenishmentMoney(double summ)
+
     {
+        replenishmentAccountDate = Calendar.getInstance();
         accountMoney = accountMoney + summ;
     }
 
