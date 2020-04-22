@@ -16,13 +16,13 @@ public class DepozitAccount extends RaschetAccount {
     public void withdrawalMoney(double summ) {
 
         Calendar withdrawalAccountDate = Calendar.getInstance();
-        withdrawalAccountDate.add(Calendar.MONTH,1);//Уменьшаем дату на месяц для дальшнйшего сравнения с датой поступления платежа
+        withdrawalAccountDate.add(Calendar.MONTH,-1);//Уменьшаем дату на месяц для дальшнйшего сравнения с датой поступления платежа
 
-        if (withdrawalAccountDate.before(replenishmentAccountDate)){//Проверяется разница между датами
+        if (withdrawalAccountDate.before(getReplenishmentAccountDate())){//Проверяется разница между датами
             System.out.println("Вы не можете снять деньга раньше месяца с момента пополнения");
         }
         else{
-            accountMoney = accountMoney - summ ;
+            super.replenishmentMoney(summ);
             System.out.println( "У Вас на счету =" + getAccountMoney());
         }
     }

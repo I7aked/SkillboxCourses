@@ -5,9 +5,9 @@ import java.util.Calendar;
 
 public class RaschetAccount {
 
-   protected Calendar replenishmentAccountDate = Calendar.getInstance();
+   private Calendar replenishmentAccountDate;
 
-   protected double accountMoney;
+   private double accountMoney;
 
    public RaschetAccount(double accountMoney)
    {
@@ -15,9 +15,8 @@ public class RaschetAccount {
    }
 
     public void replenishmentMoney(double summ)
-
     {
-        replenishmentAccountDate = Calendar.getInstance();
+        getReplenishmentAccountDate();
         accountMoney = accountMoney + summ;
     }
 
@@ -29,6 +28,12 @@ public class RaschetAccount {
     public double getAccountMoney()
     {
         return accountMoney;
+    }
+
+    public Calendar getReplenishmentAccountDate()
+    {
+        replenishmentAccountDate = Calendar.getInstance();
+        return replenishmentAccountDate;
     }
 
 }

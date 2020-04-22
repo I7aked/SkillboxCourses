@@ -9,7 +9,7 @@ public class KardAccount extends RaschetAccount {
 
     public void withdrawalMoney (double summ)
     {
-       accountMoney = accountMoney - summ*(1.01) ;
+        super.withdrawalMoney( summ*(1.01));
     }
 
 
