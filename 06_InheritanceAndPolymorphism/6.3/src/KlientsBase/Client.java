@@ -3,7 +3,7 @@ package KlientsBase;
 
 public abstract class Client {
 
-    protected double accountMoney;
+    private double accountMoney;
 
     public Client()
     {

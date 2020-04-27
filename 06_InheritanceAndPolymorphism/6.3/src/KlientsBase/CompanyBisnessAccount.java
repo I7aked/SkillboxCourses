@@ -8,9 +8,8 @@ public class CompanyBisnessAccount extends Client {
 
     @Override
     public void withdrawalMoney(double summ) {
-//        super.withdrawalMoney(summ);
-        if (accountMoney >= summ * (1.01) ) {
-            accountMoney = accountMoney - summ * (1.01);
+        if (getAccountMoney() >= summ * (1.01) ) {
+            super.withdrawalMoney(summ * (1.01));
             System.out.println("Комиссия составила= " + summ * (0.01));
         }
         else{

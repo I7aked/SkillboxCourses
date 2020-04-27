@@ -8,13 +8,12 @@ public class PersonalBisnessAccount  extends Client{
 
     @Override
     public void replenishmentMoney(double summ) {
-//        super.replenishmentMoney(summ);
-       if (summ<1000)
+       if (summ < 1000)
        {
-        accountMoney = accountMoney + summ * (0.99);
+           super.replenishmentMoney( summ * (0.99));
        }
        else {
-         accountMoney = accountMoney + summ * (0.995);
+           super.replenishmentMoney(summ * (0.995));
        }
 
     }
