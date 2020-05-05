@@ -8,12 +8,29 @@ public class Main {
         company.hire(new TopManager());
         company.getTopSalaryStaff(3);
         System.out.println("Зарплаты трёх типов сотрудников");
+        System.out.println(company.getIncome());
+        System.out.println("+++++++++++++");
 
-        company.hireAll(180,30,2);
-        System.out.println("Добавляем определённое количество операторов, менеджеров и топ менеджеров");
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
 
-        company.fire(2,200);//стираем сотрудников со 2 по 200
-        company.getLowestSalaryStaff(70);
+        company.hire(new TopManager());
+        System.out.println(company.getIncome());
+
+        System.out.println("+++++++++++++");
+
+        company.getTopSalaryStaff(3);
+
+
+//        company.hireAll(10,130,2);
+//        System.out.println("Добавляем определённое количество операторов, менеджеров и топ менеджеров");
+
+//        company.getTopSalaryStaff(8);
+
+//        company.fire(2,200);
+//        company.getLowestSalaryStaff(70);
 
     }
 }

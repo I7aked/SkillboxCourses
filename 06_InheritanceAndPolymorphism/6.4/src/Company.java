@@ -2,13 +2,12 @@ import java.util.*;
 
 public class Company {
 
+
+    //Посчитать количество менеджеров в списке через их зарплату и условие иф
     ArrayList<Emploeey> listEmploeeys = new ArrayList<>();
 
-
-    private double profitMoneyCompany = 50000000; //доход компании
-
     public void hire (Emploeey emploeey)//Найм одного сотрудника
-    //Через консоль добавляем одного сотрудника
+
     {
         listEmploeeys.add(emploeey);
     }
@@ -33,21 +32,27 @@ public class Company {
     }
 
     public void fire(int firstIndex, int secondIndex)//Увольнение сотрудника
-    //Стираем сотрудников в этом диапазоне нашего Аррай лист
+    //Стираем сотрудников в этом диапазоне нашего Аррай лис
+    //Возможно перед стиранием сотрудника, надо будет удалять его вклад в профит компании
     {
-        for ( int i = secondIndex; i >  firstIndex;i-- ) {
-            listEmploeeys.remove(i);
+        if (secondIndex >= firstIndex + 1) {
+            listEmploeeys.subList(firstIndex + 1, secondIndex + 1).clear();
         }
     }
 
-    public double getIncome()//доход компании
+    public double getIncome()//доход компании, метод возвращающий прибыль, считающий прибыль приносимую каждым сотрудника
     {
+        //доход компании
+        double profitMoneyCompany = 0;
+        for (Emploeey listEmploeey : listEmploeeys) {
+//            if (listEmploeeys.get(i).getMonthSalary() > 11000 && listEmploeeys.get(i).getMonthSalary() < 45000) {
+            profitMoneyCompany = profitMoneyCompany + listEmploeey.getSaleProduct();
+//            }
+        }
         return profitMoneyCompany;
     }
 
     public void getTopSalaryStaff(int count)//выдаёт количество сотрудников по убыванию зп
-    //Добавляем проверку задаваемого количества с фактическим количеством сотрудников
-    // Реализовать через создание дополнительного List, поместив в него данные по зп
     {
        ArrayList<Double> salaryEmploeey = new ArrayList<>();
         int numberNumber = 0;
@@ -67,20 +72,15 @@ public class Company {
             }
         }
         else{
-
             for (int i = salaryEmploeey.size(); i > salaryEmploeey.size() - count; i--)
             {
                 numberNumber++;
                 System.out.println( numberNumber + " = " + salaryEmploeey.get(i-1));
             }
         }
-
     }
 
-
-
     public void getLowestSalaryStaff(int count)//выдаёт количество сотрудников по возрастанию зп
-    //Добавляем проверку задаваемого количества с фактическим количеством сотрудников
     {
         ArrayList<Double> salaryEmploeey = new ArrayList<>();
         int numberNumber = 0;
@@ -94,10 +94,9 @@ public class Company {
 
         if (count >= salaryEmploeey.size() )// есди заданное число больше размера списка
         {
-            for (int i = 0; i < salaryEmploeey.size(); i++)
-            {
+            for (Double aDouble : salaryEmploeey) {
                 numberNumber++;
-                System.out.println( numberNumber+ " = " + salaryEmploeey.get(i));
+                System.out.println(numberNumber + " = " + aDouble);
             }
         }
         else{
@@ -114,5 +113,8 @@ public class Company {
      {
       return listEmploeeys.size();
      }
+
+
+
 
 }
