@@ -12,24 +12,24 @@ public class Company {
         listEmploeeys.add(emploeey);
     }
 
-    public void hireAll(int countOperator, int countManager, int countTopManager)//Найм списка сотрудников. Входящие данные - список котрудников
-    //Спрашиваем количество вводимых сотрудников, реализуем через иф в консоли всё
-    {
-        for (int i = 0; i < countOperator; i++)
-        {
-            listEmploeeys.add(new Operator());
-        }
-
-        for (int j = 0; j < countManager; j++)
-        {
-            listEmploeeys.add(new Manager());
-        }
-
-        for (int k = 0; k < countTopManager; k++)
-        {
-            listEmploeeys.add(new TopManager());
-        }
-    }
+//    public void hireAll(int countOperator, int countManager, int countTopManager)//Найм списка сотрудников. Входящие данные - список котрудников
+//    //Спрашиваем количество вводимых сотрудников, реализуем через иф в консоли всё
+//    {
+//        for (int i = 0; i < countOperator; i++)
+//        {
+//            listEmploeeys.add(new Operator());
+//        }
+//
+//        for (int j = 0; j < countManager; j++)
+//        {
+//            listEmploeeys.add(new Manager());
+//        }
+//
+//        for (int k = 0; k < countTopManager; k++)
+//        {
+//            listEmploeeys.add(new TopManager());
+//        }
+//    }
 
     public void fire(int firstIndex, int secondIndex)//Увольнение сотрудника
     //Стираем сотрудников в этом диапазоне нашего Аррай лис
@@ -54,59 +54,20 @@ public class Company {
 
     public void getTopSalaryStaff(int count)//выдаёт количество сотрудников по убыванию зп
     {
-       ArrayList<Double> salaryEmploeey = new ArrayList<>();
-        int numberNumber = 0;
-       for (Emploeey emploeey:listEmploeeys)
-       {
-            salaryEmploeey.add(emploeey.getMonthSalary());//заполняем лист зарплатами
-       }
-
+        ArrayList<Double> salaryEmploeey = new ArrayList<>();
+        setListSalaryEmploeey(salaryEmploeey);//добавление списка зарплат
         Collections.sort(salaryEmploeey);//сортировка листа с зарплатами
-
-        if (count >= salaryEmploeey.size() )// есди заданное число больше размера списка
-        {
-            for (int i = salaryEmploeey.size(); i > 0; i--)
-            {
-                numberNumber++;
-                System.out.println(numberNumber + " = " + salaryEmploeey.get(i-1));
-            }
-        }
-        else{
-            for (int i = salaryEmploeey.size(); i > salaryEmploeey.size() - count; i--)
-            {
-                numberNumber++;
-                System.out.println( numberNumber + " = " + salaryEmploeey.get(i-1));
-            }
-        }
+        Collections.reverse(salaryEmploeey);//разворачиваем список в обратном порядке
+        soutSalaryList(count, salaryEmploeey);//распечатка заданного количества элементов
     }
 
     public void getLowestSalaryStaff(int count)//выдаёт количество сотрудников по возрастанию зп
     {
         ArrayList<Double> salaryEmploeey = new ArrayList<>();
-        int numberNumber = 0;
-
-        for (Emploeey emploeey:listEmploeeys)
-        {
-            salaryEmploeey.add(emploeey.getMonthSalary());//заполняем лист зарплатами
-        }
-
+        setListSalaryEmploeey(salaryEmploeey);//добавление списка зарплат
         Collections.sort(salaryEmploeey);//сортировка листа с зарплатами
+        soutSalaryList(count, salaryEmploeey);//распечатка заданного количества элементов
 
-        if (count >= salaryEmploeey.size() )// есди заданное число больше размера списка
-        {
-            for (Double aDouble : salaryEmploeey) {
-                numberNumber++;
-                System.out.println(numberNumber + " = " + aDouble);
-            }
-        }
-        else{
-
-            for (int i = 0; i <  count; i++)
-            {
-                numberNumber++;
-                System.out.println( numberNumber+ " = " + salaryEmploeey.get(i));
-            }
-        }
     }
 
      public int getListEmploeeysSize()
@@ -114,7 +75,33 @@ public class Company {
       return listEmploeeys.size();
      }
 
+     private void setListSalaryEmploeey(ArrayList<Double> salaryEmploeey)
+     {
+         for (Emploeey emploeey:listEmploeeys)
+         {
+             salaryEmploeey.add(emploeey.getMonthSalary());//заполняем лист зарплатами
+         }
+     }
 
+     private void soutSalaryList(int count, ArrayList<Double> salaryEmploeey)
+     {
+        int numberNumber = 0;
+         if (count >= salaryEmploeey.size() )// есди заданное число больше размера списка
+         {
+             for (Double aDouble : salaryEmploeey) {
+                 numberNumber++;
+                 System.out.println(numberNumber + " = " + aDouble);
+             }
+         }
+         else{
+             for (int i = 0; i <  count; i++)
+             {
+                 numberNumber++;
+                 System.out.println( numberNumber+ " = " + salaryEmploeey.get(i));
+             }
+         }
+
+     }
 
 
 }

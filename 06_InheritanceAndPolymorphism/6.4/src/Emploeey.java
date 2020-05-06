@@ -1,7 +1,10 @@
 public interface Emploeey {
 
     double getMonthSalary();
-    double getSaleProduct();
+    default double getSaleProduct()
+    {
+        return 0;
+    }
 
 
 }

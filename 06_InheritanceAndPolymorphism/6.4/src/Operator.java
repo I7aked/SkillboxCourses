@@ -11,7 +11,4 @@ public class Operator extends Company implements Emploeey {
         return monthSalaryOperator;
     }
 
-    @Override
-    public double getSaleProduct(){
-        return 0;}
 }

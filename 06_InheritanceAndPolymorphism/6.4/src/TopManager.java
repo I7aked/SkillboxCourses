@@ -1,31 +1,31 @@
 public class TopManager  implements Emploeey {
     private double monthSalaryTopManager;
-    private static boolean first;
+    private final Company company;
 
-    public TopManager()
+    public TopManager( Company company)
+
     {
       monthSalaryTopManager = 50000;
+      this.company = company;
     }
 
     @Override
     public double getMonthSalary()
     {
-        if (getMonthValueTopManager()){
+        if (getMonthValueTopManager() && monthSalaryTopManager!= 125000 ){
             monthSalaryTopManager = monthSalaryTopManager * 2.5;
         }
         return monthSalaryTopManager;
     }
 
-    public boolean getMonthValueTopManager(Company company)
+    public boolean getMonthValueTopManager()
     {
-        return company.getIncome() > 1000000;
+        return getCompany().getIncome() > 1000000;
     }
 
-
-
-    @Override
-    public double getSaleProduct(){
-        return 0;}
-
+    public Company getCompany()
+    {
+        return company;
+    }
 
 }

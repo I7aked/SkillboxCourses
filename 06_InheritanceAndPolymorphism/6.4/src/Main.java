@@ -5,7 +5,7 @@ public class Main {
 
         company.hire(new Manager());
         company.hire(new Operator());
-        company.hire(new TopManager());
+        company.hire(new TopManager(company));
         company.getTopSalaryStaff(3);
         System.out.println("Зарплаты трёх типов сотрудников");
         System.out.println(company.getIncome());
@@ -15,8 +15,16 @@ public class Main {
         company.hire(new Manager());
         company.hire(new Manager());
         company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
+        company.hire(new Manager());
 
-        company.hire(new TopManager());
+        company.hire(new TopManager(company));
         System.out.println(company.getIncome());
 
         System.out.println("+++++++++++++");
