@@ -1,5 +1,5 @@
 public class TopManager  implements Emploeey {
-    private double monthSalaryTopManager;
+    private final double monthSalaryTopManager;
     private final Company company;
 
     public TopManager( Company company)
@@ -12,10 +12,12 @@ public class TopManager  implements Emploeey {
     @Override
     public double getMonthSalary()
     {
-        if (getMonthValueTopManager() && monthSalaryTopManager!= 125000 ){
-            monthSalaryTopManager = monthSalaryTopManager * 2.5;
+        if (!getMonthValueTopManager() ){
+          return   monthSalaryTopManager ;
         }
-        return monthSalaryTopManager;
+        else {
+            return monthSalaryTopManager * (2.5);
+        }
     }
 
     public boolean getMonthValueTopManager()
