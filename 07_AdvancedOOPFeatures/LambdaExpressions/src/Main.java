@@ -1,3 +1,8 @@
+import com.skillbox.airport.Aircraft;
+import com.skillbox.airport.Airport;
+import com.skillbox.airport.Flight;
+import com.skillbox.airport.Terminal;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -5,32 +10,34 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
+
 public class Main
 {
     private static String staffFile = "data/staff.txt";
     private static String dateFormat = "dd.MM.yyyy";
 
+
     public static void main(String[] args)
     {
         ArrayList<Employee> staff = loadStaffFromFile();
-        Collections.sort(staff, (o1,o2) -> {
-          if( o1.getSalary().compareTo(o2.getSalary()) == 0)
-          {
-              return o1.getName().compareTo(o2.getName());
-          }
-            else
-                {
-                    return o1.getSalary().compareTo(o2.getSalary());
-                }
-        });
+
+        staff.stream()
+                .filter(e -> e.getWorkStart().before(new Date(01, 01, 2018)) && e.getWorkStart().after(new Date(31, 12,2016)))
+                .max(Comparator.comparing(Employee::getSalary))
+                .ifPresent(System.out::println);
+
+        Airport airport = Airport.getInstance();
+
+        airport.getTerminals().stream()
+                .map(Terminal::getFlights).filter();
 
 
 
 
-        for (Employee employee: staff)
-        {
-            System.out.println(employee);
-        }
+//        for (Employee employee: staff)
+//        {
+//            System.out.println(employee);
+//        }
     }
 
     private static ArrayList<Employee> loadStaffFromFile()

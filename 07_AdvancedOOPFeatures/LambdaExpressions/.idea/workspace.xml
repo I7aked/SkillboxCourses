@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="baabd658-2e59-4748-887f-1bdd396c992b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LambdaExpressions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LambdaExpressions.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LambdaExpressions/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LambdaExpressions/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +29,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558674161968" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/library/airport-1.0.1.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -58,37 +64,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="994" height="295" key="GridCell.Tab.0.bottom" timestamp="1589102962351">
+    <state x="871" y="302" width="764" height="484" key="FileChooserDialogImpl" timestamp="1590056427654">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="994" height="295" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1589102962351" />
-    <state width="994" height="295" key="GridCell.Tab.0.center" timestamp="1589102962350">
+    <state x="871" y="302" width="764" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590056427654" />
+    <state width="1159" height="217" key="GridCell.Tab.0.bottom" timestamp="1589977807250">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="994" height="295" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1589102962350" />
-    <state width="994" height="295" key="GridCell.Tab.0.left" timestamp="1589102962350">
+    <state width="1159" height="217" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1589977807250" />
+    <state width="1159" height="217" key="GridCell.Tab.0.center" timestamp="1589977807249">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="994" height="295" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1589102962350" />
-    <state width="994" height="295" key="GridCell.Tab.0.right" timestamp="1589102962351">
+    <state width="1159" height="217" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1589977807249" />
+    <state width="1159" height="217" key="GridCell.Tab.0.left" timestamp="1589977807248">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="994" height="295" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1589102962351" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state width="1159" height="217" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1589977807248" />
+    <state width="1159" height="217" key="GridCell.Tab.0.right" timestamp="1589977807249">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1159" height="217" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1589977807249" />
+    <state x="571" y="121" width="1024" height="845" key="SettingsEditor" timestamp="1589978037234">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="571" y="121" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1589978037234" />
   </component>
 </project>
