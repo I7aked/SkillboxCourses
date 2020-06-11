@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f368384a-e66f-46cb-aa05-8a5865081856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomerStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +27,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559109403663" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SPBMetro" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -58,22 +57,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1159" height="262" key="GridCell.Tab.0.bottom" timestamp="1590754529440">
+    <state x="1056" y="335" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591268606128">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1159" height="262" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590754529440" />
-    <state width="1159" height="262" key="GridCell.Tab.0.center" timestamp="1590754529440">
+    <state x="1056" y="335" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1591268606128" />
+    <state width="1159" height="262" key="GridCell.Tab.0.bottom" timestamp="1590850679139">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1159" height="262" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590754529440" />
-    <state width="1159" height="262" key="GridCell.Tab.0.left" timestamp="1590754529439">
+    <state width="1159" height="262" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590850679139" />
+    <state width="1159" height="262" key="GridCell.Tab.0.center" timestamp="1590850679136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1159" height="262" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590754529439" />
-    <state width="1159" height="262" key="GridCell.Tab.0.right" timestamp="1590754529440">
+    <state width="1159" height="262" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590850679136" />
+    <state width="1159" height="262" key="GridCell.Tab.0.left" timestamp="1590850679136">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1159" height="262" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590754529440" />
+    <state width="1159" height="262" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590850679136" />
+    <state width="1159" height="262" key="GridCell.Tab.0.right" timestamp="1590850679138">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="1159" height="262" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590850679138" />
   </component>
   <component name="masterDetails">
     <states>
