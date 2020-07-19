@@ -37,7 +37,11 @@ public class StationIndex
             TreeSet<Station> connectedStations = connections.get(station);
             connectedStations.addAll(stations.stream()
                 .filter(s -> !s.equals(station)).collect(Collectors.toList()));
-        }
+            //Разобраться конкретнее
+            //При отсутствии станции в мапе connections, создаём поле этой станции и вносим в качетсве ключа пустой TreeSet
+            //Проверяем в стриме равна ли наша станция заданной, если нет, формируем коллекцию connectedStations из этих не равных станций
+            //непонятно когда мы работаем с connections на основе connectedStations?
+            }
     }
 
     public Line getLine(int number)
@@ -67,6 +71,7 @@ public class StationIndex
     {
         if(connections.containsKey(station)) {
             return connections.get(station);
+            //Проверяем соединение и берём станцию(Set<Station>) по ключа Мапы
         }
         return new TreeSet<>();
     }

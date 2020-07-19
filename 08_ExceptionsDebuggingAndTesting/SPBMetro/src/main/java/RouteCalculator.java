@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class RouteCalculator
 {
+
     private StationIndex stationIndex;
 
     private static double interStationDuration = 2.5;
@@ -24,8 +25,9 @@ public class RouteCalculator
             return route;
         }
 
+        //Если закоммитить этот метод, всё работает. Надо смотреть условия вызова метода с двумя пересадками и этого метода
         route = getRouteWithOneConnection(from, to);
-        if(route != null) {
+        if(route != null && !route.isEmpty()) {
             return route;
         }
 
@@ -88,6 +90,7 @@ public class RouteCalculator
 
     private List<Station> getRouteWithOneConnection(Station from, Station to)
     {
+        //если мы лежим на разных линиях(станции) это выражение всегда даёт false и всегда выполняется (или пытается выполниться(
         if(from.getLine().equals(to.getLine())) {
             return null;
         }
@@ -123,6 +126,9 @@ public class RouteCalculator
     }
 
     private List<Station> getRouteViaConnectedLine(Station from, Station to)
+            //Здесь должны просматривать многие станции и получать маршрут для тех, которые находятся на одной линии
+            //fromConnected и toConnected - список станций(Set<Station>) которые имеют переходы со станциями from и to
+            //Ниже, по идеи, мы просматриваем эти станци во вложенном цикле и в случаи нахождения их на одной линии строим маршрут по линиии
     {
         Set<Station> fromConnected = stationIndex.getConnectedStations(from);
         Set<Station> toConnected = stationIndex.getConnectedStations(to);
@@ -140,14 +146,15 @@ public class RouteCalculator
 
     private List<Station> getRouteWithTwoConnections(Station from, Station to)
     {
-        if (from.getLine().equals(to.getLine())) {
-            return null;
-        }
+//        if (from.getLine().equals(to.getLine())) {
+//            return null;
+//        }
 
         ArrayList<Station> route = new ArrayList<>();
 
         List<Station> fromLineStations = from.getLine().getStations();
         List<Station> toLineStations = to.getLine().getStations();
+        //получаем списки станций на линиях, на которых находятся исходные станции
         for(Station srcStation : fromLineStations)
         {
             for (Station dstStation : toLineStations)

@@ -34,6 +34,7 @@ public class Main
 
             System.out.println("Длительность: " +
                 RouteCalculator.calculateDuration(route) + " минут");
+
         }
     }
 

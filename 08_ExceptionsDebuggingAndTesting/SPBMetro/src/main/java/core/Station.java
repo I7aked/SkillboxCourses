@@ -30,6 +30,8 @@ public class Station implements Comparable<Station>
         }
         return name.compareToIgnoreCase(station.getName());
     }
+    //В случае совпадения значений линии и линии станции компейр ту даст 0
+    //и мы будем сортировать список по именам станций
 
     @Override
     public boolean equals(Object obj)

@@ -41,6 +41,7 @@ public class Line implements Comparable<Line>
     {
         return Integer.compare(number, line.getNumber());
     }
+    //сравниваем номер линии указанной в методе с номером линии полученной в методе гетНамбер
 
     @Override
     public boolean equals(Object obj)
