@@ -13,7 +13,9 @@ public class RouteCalculatorTest extends TestCase
     StationIndex stationIndex = new StationIndex();
     RouteCalculator calculator = new RouteCalculator(stationIndex);
 //    TreeMap<Station,Station> connection;
-    List<Station> connection = new ArrayList<>();
+    List<Station> connectionFirst = new ArrayList<>();
+    List<Station> connectionSecond = new ArrayList<>();
+
     @Override
     protected void setUp() throws Exception//инициализирует данные
     {
@@ -52,17 +54,19 @@ public class RouteCalculatorTest extends TestCase
         route.add(st6);
         route.add(st7);
 
-        connection.add(st3);
-        connection.add(st4);
+        connectionFirst.add(st3);
+        connectionFirst.add(st4);
 //        stationIndex.getConnectedStations(st3);
 //        connection.add(st2);
 //        connection.add(st1);
-        connection.add(st6);
-        connection.add(st5);
+        connectionSecond.add(st6);
+        connectionSecond.add(st5);
 //        connection.add(st7);
 
         stationIndex.stations.addAll(route);
-        stationIndex.addConnection(connection);
+        stationIndex.addConnection(connectionFirst);
+        stationIndex.addConnection(connectionSecond);
+
 
     }
 
