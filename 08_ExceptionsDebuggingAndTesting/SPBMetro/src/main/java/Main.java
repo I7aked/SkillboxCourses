@@ -2,6 +2,8 @@ import core.Line;
 import core.Station;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,7 +16,12 @@ import java.util.Scanner;
 
 public class Main
 {
-    private static Logger logger ;
+//    private static Logger logger ;
+    private static final Logger LOGGER = LogManager.getLogger(Main.class.getName());
+    private static final Marker INPUT_HISTORY_MARKER = MarkerManager.getMarker("INPUT_HISTORY");
+    private static final Marker INVALID_STATIONS_MARKER = MarkerManager.getMarker("INVALID_STATIONS");
+    private static final Marker EXCEPTION_MARKER = MarkerManager.getMarker("EXCEPTION");
+
     private static String dataFile = "src/main/resources/map.json";
     private static Scanner scanner;
 
@@ -25,15 +32,17 @@ public class Main
 
 
             RouteCalculator calculator = getRouteCalculator();
-            logger = LogManager.getRootLogger();
+//            logger = LogManager.getRootLogger();
             System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
             scanner = new Scanner(System.in);
             for (; ; ) {
 
                 Station from = takeStation("Введите станцию отправления:");
-                logger.info("Станция отправления " + from);
+//                logger.info("Станция отправления " + from);
+                LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел станцию: {}", from);
                 Station to = takeStation("Введите станцию назначения:");
-                logger.info("Станция назначения " + to);
+//                logger.info("Станция назначения " + to);
+                LOGGER.info(INPUT_HISTORY_MARKER, "Пользователь ввел станцию: {}", to);
 
                 List<Station> route = calculator.getShortestRoute(from, to);
                 System.out.println("Маршрут:");
@@ -82,13 +91,22 @@ public class Main
             if(station != null) {
                 return station;
             }
+            LOGGER.warn(INVALID_STATIONS_MARKER,"Данной станции не существует ");
             System.out.println("Станция не найдена :(");
-            logger.warn("Несуществующая станция");
             try {
                 throw new Exception();
-            } catch (Exception exception) {
-                logger.error("Что-то пошло не так");
+            } catch (Exception ex)
+            {
+                LOGGER.error(EXCEPTION_MARKER,"Что-то сломалось");
+
             }
+
+//            logger.warn("Несуществующая станция");
+//            try {
+//                throw new Exception();
+//            } catch (Exception exception) {
+//                logger.error("Что-то пошло не так");
+//            }
 
 
         }
