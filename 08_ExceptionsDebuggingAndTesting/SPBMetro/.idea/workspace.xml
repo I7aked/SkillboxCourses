@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/exceptions.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/exceptions.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/input_errors.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/input_errors.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/search.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/search.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-    </list>
+    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +156,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state width="1807" height="343" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1596367524706" />
+    <state x="251" y="255" width="1474" height="594" key="new project wizard" timestamp="1596866053352">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="251" y="255" width="1474" height="594" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1596866053352" />
     <state x="687" y="296" width="602" height="512" key="refactoring.ChangeSignatureDialog" timestamp="1596013929411">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
