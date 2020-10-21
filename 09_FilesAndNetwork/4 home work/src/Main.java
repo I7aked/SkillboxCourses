@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 public class Main {
 
+    private static final String FILE_TO = "../images" ;
     public static void main(String[] args) throws IOException {
 
 
@@ -30,11 +31,20 @@ public class Main {
 
                         String fileName = el.replaceAll("(.+?\\/)","");
                         System.out.println(fileName);
-                        String website = el.replaceAll("([A-Z]*[a-z]*[0-9]*\\_.+\\.[jp]?[jpg]?[png]?.?)","") + fileName;
+                        String website = "";
+
+                        if (!el.contains("watch")) {
+                             website = el.replaceAll("([A-Z]*[a-z]*[0-9]*\\_.+\\.[jp]?[jpg]?[png]?.?)", "") + fileName;
+                        }
+                        else{
+                             website = el.replaceAll("([A-Z]*[a-z]*[0-9]*\\_.+\\.[jp]?[jpg]?[png]?.?)", "") ;
+                        }
 
                         URL url = new URL(website);
+                        File file = new File("./images/" + fileName);
+
                         InputStream inputStream = url.openStream();
-                        OutputStream outputStream = new FileOutputStream(fileName);
+                        OutputStream outputStream = new FileOutputStream(file);
                         byte[] buffer = new byte[2048];
 
                         int length = 0;
@@ -46,6 +56,7 @@ public class Main {
 
                         inputStream.close();
                         outputStream.close();
+
 
                     } catch(Exception e) {
                         System.out.println("Exception: " + e.getMessage());
