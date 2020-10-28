@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="baabd658-2e59-4748-887f-1bdd396c992b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="baabd658-2e59-4748-887f-1bdd396c992b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558674161968" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/library/airport-1.0.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../08_ExceptionsDebuggingAndTesting/SPBMetro" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -47,6 +45,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -61,33 +60,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="871" y="302" width="764" height="484" key="FileChooserDialogImpl" timestamp="1590655445170">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="871" y="302" width="424" height="491" key="FileChooserDialogImpl" timestamp="1603820789949">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="871" y="302" width="764" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1590655445170" />
-    <state width="1159" height="217" key="GridCell.Tab.0.bottom" timestamp="1590492267058">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1159" height="217" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1590492267058" />
-    <state width="1159" height="217" key="GridCell.Tab.0.center" timestamp="1590492267057">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1159" height="217" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1590492267057" />
-    <state width="1159" height="217" key="GridCell.Tab.0.left" timestamp="1590492267057">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1159" height="217" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1590492267057" />
-    <state width="1159" height="217" key="GridCell.Tab.0.right" timestamp="1590492267058">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state width="1159" height="217" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1590492267058" />
-    <state x="571" y="121" width="1024" height="845" key="SettingsEditor" timestamp="1589978037234">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="571" y="121" width="1024" height="845" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1589978037234" />
-    <state x="347" y="135" width="1474" height="818" key="new project wizard" timestamp="1590655521119">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="347" y="135" width="1474" height="818" key="new project wizard/67.27.1853.1053@67.27.1853.1053" timestamp="1590655521119" />
+    <state x="871" y="302" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1603820789949" />
   </component>
 </project>

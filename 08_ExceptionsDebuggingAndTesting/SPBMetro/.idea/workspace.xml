@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="" />
+    <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../07_AdvancedOOPFeatures/LambdaExpressions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../07_AdvancedOOPFeatures/LambdaExpressions/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559622580090" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../09_FilesAndNetwork/5" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -112,18 +115,11 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="451" y="210" width="1084" height="711" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1596017801980" />
-    <state x="956" y="251" width="374" height="587" key="#com.intellij.ide.util.MemberChooser" timestamp="1591269904516">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="956" y="251" width="374" height="587" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1591269904516" />
-    <state x="777" y="266" width="624" height="528" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594806064268">
-      <screen x="67" y="27" width="1853" height="1053" />
-    </state>
-    <state x="777" y="266" width="624" height="528" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1594806064268" />
-    <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595956424825">
-      <screen x="67" y="27" width="1853" height="1053" />
+    <state x="779" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1603880828108">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1595956424825" />
+    <state x="779" y="310" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1603880828108" />
     <state width="1807" height="343" key="GridCell.Tab.0.bottom" timestamp="1596375335078">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
