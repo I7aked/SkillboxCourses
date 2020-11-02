@@ -1,7 +1,9 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.cliftonlabs.json_simple.Jsoner;
 import com.google.gson.stream.JsonWriter;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -24,11 +26,10 @@ public class Main {
         String bodyMetroMoskow = doc.body().toString();//Всё что тело html документа нынче строка
         Document metroMoskow = Jsoup.parse(bodyMetroMoskow); //полуичли html файл из этой строки
 
-        Map<String, String> lineNameNumber = new TreeMap<>(); //Мапа с именем линии и номером линии.
-        Map<String, String> stationNameLineNumber = new TreeMap<>() {
-        };//Мапа Имя станции и номер линии
+        Map<String, String> lineNameNumber = new TreeMap<>();
+        Map<String, String> stationNameLineNumber = new TreeMap<>() {};
         Map<String, Map<String, String>> stationConnection = new TreeMap<>();//Переходы тоже в виде мапы? ВРоде бы там было так: TreeMap(<String>, Treemap(<String>, <String>))
-        NavigableMap<Integer, String> numberLineLocal = new TreeMap();//вспомогательная мапа для получения последней линии и добавления её в мапу со станциями
+        NavigableMap<Integer, String> numberLineLocal = new TreeMap<>();//вспомогательная мапа для получения последней линии и добавления её в мапу со станциями
         Map<String, List<String>> lineWithStations = new TreeMap<>();
         List<String> stationConnectionList = new ArrayList<>();
         List<String> numberLineList = new ArrayList<>();
@@ -37,44 +38,50 @@ public class Main {
         //Сплитим по пробелам, складываем в лист стринг. Делаем стрим по строкам, ищем соответствия
         // в зависимости от соответствий заполняем мапы с элементами
 
-//        elementsSpanHtmlPage.eachText().stream()// можно получить весь текст и заполнить частично мапы
-//                .forEach(e -> { //условие со счетчиком для запоминания предыдущей строки
-//                }); Останется как варинт возможного получения текста и работы со станциями
-//      Как вариант прописать проверkупервого символа, типа первый цифра, второй точка и тогдачет делаем
-
         elementsSpanHtmlPage.stream()
                 .map(el -> el.toString())
                 .collect(Collectors.toList())
 //                .forEach(System.out::println);
                 .forEach(el -> {
-
+//
                     //Собираем мапу с линиями метро
                     if (el.contains("data-line=")) {
                         String lineBilder = el.replaceAll("^(.+?>)", "");
+                        lineBilder = lineBilder.replaceAll("<\\/span>", "");
                         String numberBilder = el.replaceAll(".+?(ln\\-)", "");
-                        numberLineLocal.put(numberLineLocal.size() + 1, numberBilder.replaceAll("\".*", ""));
-                        lineNameNumber.put(numberBilder.replaceAll("\".*", ""), lineBilder.replaceAll("<\\/span>", ""));
-                        numberLineList.add(numberBilder.replaceAll("\".*", ""));
-
+                        numberBilder = numberBilder.replaceAll("\".*", "");
+                        numberLineLocal.put(numberLineLocal.size() + 1, numberBilder);
+                        lineNameNumber.put(numberBilder, lineBilder);
+                        numberLineList.add(numberBilder);
                     }
 
                     //Собираем мапу с именами станций и номерами линий станций
                     if (el.contains("class=\"name\"")) {
                         String stationName = el.replaceAll("^(.+?>)", "");
+                        stationName = stationName.replaceAll("<\\/span>", "");
                         //Решение вопроса с повторяющимися названиями станций
                         boolean flag = false;
+                        boolean flagSecond = false;
                         for (Map.Entry entry : stationNameLineNumber.entrySet()) {
-                            if (entry.getKey().equals(stationName.replaceAll("<\\/span>", ""))) {
-                                flag = stationName.replaceAll("<\\/span>", "").equals(entry.getKey());
+                            if (entry.getKey().equals(stationName) | entry.getKey().equals(" " + stationName) ) {
+                                flag = stationName.equals(entry.getKey());
+                                String stationNameLocal = " " + stationName;
+                                flagSecond = stationNameLocal.equals(entry.getKey());
+                                if(flagSecond){break;}
                             }
                         }
 
-                        if (!flag) {
-                            stationNameLineNumber.put(stationName.replaceAll("<\\/span>", ""), numberLineLocal.lastEntry().getValue());
-                            stationConnectionList.add(stationName.replaceAll("<\\/span>", ""));
+                        if (!flagSecond) {
+                            if (!flag) {
+                                stationNameLineNumber.put(stationName, numberLineLocal.lastEntry().getValue());
+                            stationConnectionList.add(stationName);
+                            } else {
+                                stationNameLineNumber.put(" " + stationName, numberLineLocal.lastEntry().getValue());
+                           stationConnectionList.add(" " + stationName);
+                           }
                         } else {
-                            stationNameLineNumber.put(" " + stationName.replaceAll("<\\/span>", ""), numberLineLocal.lastEntry().getValue());
-                            stationConnectionList.add(stationName.replaceAll("<\\/span>", ""));
+                                stationNameLineNumber.put("  " + stationName, numberLineLocal.lastEntry().getValue());
+                        stationConnectionList.add("  " + stationName);
                         }
                     }
 
@@ -105,11 +112,6 @@ public class Main {
             }
             lineWithStations.put(numberLineList.get(i), stationLocalList);
         }
-//        lineWithStations.put(numberLineList.get(0),numberLineList);
-//Реализовать мапы по принципу ключ - значения( Map<String,ArrayList<String>>)
-
-
-//добавляю Джейсон обджектами свои мапы, делаю иерархию, потом пробую записать всё бафферед ридером
 
         //JsonSimple
 //        задаём станции и линии в джейсоны
@@ -130,6 +132,7 @@ public class Main {
             writer.write(",");
             writer.newLine();
             writer.write("\"connections\" :");
+            writer.newLine();
             Jsoner.serialize(jsonStationNameConnection, writer);
             writer.write(",");
             writer.newLine();
@@ -140,6 +143,19 @@ public class Main {
             writer.write("}");
             writer.close();
         } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+
+
+        StringBuilder builder = new StringBuilder();
+        try
+        {
+            List<String> lines = Files.readAllLines(Paths.get("LinesAndStations.json"));
+            lines.forEach(System.out::println);
+
+        }
+        catch(Exception ex) {
             ex.printStackTrace();
         }
 
@@ -165,11 +181,10 @@ public class Main {
 //        writer.close();
 
 
-//        for (Map.Entry entry : lineWithStations.entrySet()) {
+//        for (Map.Entry entry : stationConnection.entrySet()) {
 //            System.out.println(entry.getKey() + ", " + entry.getValue());
 //        }
 
-//        System.out.println(elementsSpanHtmlPage);
     }
 }
 

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a5e1234-1100-4917-9bdf-687150e205e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../07_AdvancedOOPFeatures/LambdaExpressions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../07_AdvancedOOPFeatures/LambdaExpressions/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/LinesAndStations.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/LinesAndStations.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/target/classes/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../09_FilesAndNetwork/5/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559622580090" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../09_FilesAndNetwork/5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
