@@ -4,22 +4,5 @@
 *.xml
 */out/
 
-03_ObjectsAndClasses/Cat/.idea/workspace.xml
-03_ObjectsAndClasses/Cat/out/
-03_ObjectsAndClasses/Cat/.idea/workspace.xml
-03_ObjectsAndClasses/Airport/out/
-
-04_NumbersStringsAndDates/IntegerExperiments/out/
-04_NumbersStringsAndDates/IntegerExperiments 4.2/out/
-04_NumbersStringsAndDates/IntegerExperiments 4.3/out/
-
-04_NumbersStringsAndDates/StringExperiments/*
-04_NumbersStringsAndDates/StringExperiments/src/Loader.java
-04_NumbersStringsAndDates/StringExperiments 4.4/out/production/StringExperiments/Loader.class
- 04_NumbersStringsAndDates/StringExperiments 4.4/src/Loader.java
-
-04_NumbersStringsAndDates/StringExperiments 4.5/src/TestRegex.java
-04_NumbersStringsAndDates/StringExperiments 4.5/out/production/StringExperiments 4.5/TestRegex.class
-04_NumbersStringsAndDates/StringExperiments 4.5/src/FioRegular.java
 
 

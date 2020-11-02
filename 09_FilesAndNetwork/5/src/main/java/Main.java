@@ -127,7 +127,7 @@ public class Main {
         jsonlineNameNumber.putAll(lineNameNumber);
 
         try {
-            BufferedWriter writer = Files.newBufferedWriter(Paths.get("LinesAndStations.json"));
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get("LinesAndStation.json"));
             writer.write("{ \"stations\" :");
             writer.newLine();
             Jsoner.serialize(jsonStationNameLineNumber, writer);
@@ -151,7 +151,7 @@ public class Main {
 
         StringBuilder builder = new StringBuilder();
         try {
-            List<String> lines = Files.readAllLines(Paths.get("LinesAndStations.json"));
+            List<String> lines = Files.readAllLines(Paths.get("LinesAndStation.json"));
             lines.forEach(System.out::println);
 
         } catch (Exception ex) {
