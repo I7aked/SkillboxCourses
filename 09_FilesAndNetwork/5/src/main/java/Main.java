@@ -27,7 +27,7 @@ public class Main {
         Document metroMoskow = Jsoup.parse(bodyMetroMoskow); //полуичли html файл из этой строки
 
         Map<String, String> lineNameNumber = new TreeMap<>();
-        Map<String, String> stationNameLineNumber = new TreeMap<>() {};
+        Map<String, String> stationNameLineNumber = new TreeMap<>();
         Map<String, Map<String, String>> stationConnection = new TreeMap<>();//Переходы тоже в виде мапы? ВРоде бы там было так: TreeMap(<String>, Treemap(<String>, <String>))
         NavigableMap<Integer, String> numberLineLocal = new TreeMap<>();//вспомогательная мапа для получения последней линии и добавления её в мапу со станциями
         Map<String, List<String>> lineWithStations = new TreeMap<>();
@@ -63,25 +63,27 @@ public class Main {
                         boolean flag = false;
                         boolean flagSecond = false;
                         for (Map.Entry entry : stationNameLineNumber.entrySet()) {
-                            if (entry.getKey().equals(stationName) | entry.getKey().equals(" " + stationName) ) {
+                            if (entry.getKey().equals(stationName) | entry.getKey().equals(" " + stationName)) {
                                 flag = stationName.equals(entry.getKey());
                                 String stationNameLocal = " " + stationName;
                                 flagSecond = stationNameLocal.equals(entry.getKey());
-                                if(flagSecond){break;}
+                                if (flagSecond) {
+                                    break;
+                                }
                             }
                         }
 
                         if (!flagSecond) {
                             if (!flag) {
                                 stationNameLineNumber.put(stationName, numberLineLocal.lastEntry().getValue());
-                            stationConnectionList.add(stationName);
+                                stationConnectionList.add(stationName);
                             } else {
                                 stationNameLineNumber.put(" " + stationName, numberLineLocal.lastEntry().getValue());
-                           stationConnectionList.add(" " + stationName);
-                           }
+                                stationConnectionList.add(" " + stationName);
+                            }
                         } else {
-                                stationNameLineNumber.put("  " + stationName, numberLineLocal.lastEntry().getValue());
-                        stationConnectionList.add("  " + stationName);
+                            stationNameLineNumber.put("  " + stationName, numberLineLocal.lastEntry().getValue());
+                            stationConnectionList.add("  " + stationName);
                         }
                     }
 
@@ -147,15 +149,12 @@ public class Main {
         }
 
 
-
         StringBuilder builder = new StringBuilder();
-        try
-        {
+        try {
             List<String> lines = Files.readAllLines(Paths.get("LinesAndStations.json"));
             lines.forEach(System.out::println);
 
-        }
-        catch(Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
