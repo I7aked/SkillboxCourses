@@ -15,18 +15,16 @@ public class Main
             Connection connection = DriverManager.getConnection(url, user, pas);
 
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT c1.name, s1.course_id, s1.monts, AVG(s1.conts) as 'srkolvo' FROM\n" +
-                    "(SELECT course_id, MONTH(subscription_date) as monts, COUNT(MONTH(subscription_date)) as conts FROM Subscriptions GROUP BY course_id, monts) as s1 LEFT JOIN Courses as c1 ON c1.id=s1.course_id GROUP BY s1.course_id, s1.monts;");
+            ResultSet resultSet = statement.executeQuery("SELECT c.name, COUNT(MONTH(s.subscription_date))/12 AS avgMonts FROM Courses c JOIN Subscriptions s ON s.course_id = c.id WHERE YEAR(s.subscription_date)\n" +
+                    " = 2018 GROUP BY c.name;");
 
             while (resultSet.next())
             {
               String parovozik = "";
-                String courseName = resultSet.getString("name");
+                String courseName = resultSet.getString("c.name");
                 parovozik = "" + courseName;
-                courseName = resultSet.getString("monts");
-                parovozik += " месяц = " + courseName;
-                courseName = resultSet.getString("srkolvo");
-                parovozik += " количество покупок в месяц = " + courseName;
+                courseName = resultSet.getString("avgMonts");
+                parovozik += "!  среднее количество покупок в месяц = " + courseName;
               System.out.println(parovozik);
             }
 
