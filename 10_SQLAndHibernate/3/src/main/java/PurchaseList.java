@@ -4,15 +4,14 @@ import java.util.Date;
 
 @Entity
 @Table(name = "PurchaseList")
-@IdClass(PurchaseListFK.class)
-public class PurchaseList
+public class PurchaseList implements Serializable
 {
-    PurchaseList(){}
+//    PurchaseList(){}
 
-    PurchaseList(PurchaseListFK purchaseListFK){
-        studentName = purchaseListFK.getStudentName();
-        courseName = purchaseListFK.getCourseName();
-    }
+//    PurchaseList(PurchaseListFK purchaseListFK){
+//        studentName = purchaseListFK.getStudentName();
+//        courseName = purchaseListFK.getCourseName();
+//    }
 
 //    @Id
 //    @AttributeOverrides({
