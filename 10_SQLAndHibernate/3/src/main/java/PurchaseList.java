@@ -1,22 +1,35 @@
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-@Embeddable
+@Entity
 @Table(name = "PurchaseList")
+@IdClass(PurchaseListFK.class)
 public class PurchaseList
 {
-    @Id
-    @JoinColumn(name = "student_name")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Students studentName;
+    PurchaseList(){}
 
-    @JoinColumn(name = "course_name")
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Course courseName;
+    PurchaseList(PurchaseListFK purchaseListFK){
+        studentName = purchaseListFK.getStudentName();
+        courseName = purchaseListFK.getCourseName();
+    }
+
+//    @Id
+//    @AttributeOverrides({
+//            @AttributeOverride(name = "studentName", column = @Column(name = "student_name")),
+//            @AttributeOverride(name = "courseName", column = @Column(name = "course_name"))
+//    })
+
+    @Id
+    @Column(name = "student_name")
+    private String studentName;
+
+    @Id
+    @Column(name = "course_name")
+    private String courseName;
 
     @Column(name = "subscription_date")
-    @OneToOne(cascade = CascadeType.ALL)
-    private Subscriptions subscriptionDate;
+    private Date subscriptionDate;
 
     private int price;
 
@@ -28,27 +41,27 @@ public class PurchaseList
         this.price = price;
     }
 
-    public Students getStudentsName() {
+    public String getStudentName() {
         return studentName;
     }
 
-    public void setStudentsName(Students studentName) {
+    public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
 
-    public Course getCourseName() {
+    public String getCourseName() {
         return courseName;
     }
 
-    public void setCourseName(Course courseName) {
+    public void setCourseName(String courseName) {
         this.courseName = courseName;
     }
 
-    public Subscriptions getSubscriptionDate() {
+    public Date getSubscriptionDate() {
         return subscriptionDate;
     }
 
-    public void setSubscriptionDate(Subscriptions subscriptionDate) {
+    public void setSubscriptionDate(Date subscriptionDate) {
         this.subscriptionDate = subscriptionDate;
     }
 

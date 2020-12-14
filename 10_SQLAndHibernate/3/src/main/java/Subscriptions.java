@@ -9,11 +9,11 @@ public class Subscriptions implements Serializable
 
     @Id
     @Column(name = "student_id")
-     private int studentId;
+    private int studentId;
 
     @Id
     @Column(name = "course_id")
-     private int courseId;
+    private int courseId;
 
     @Column(name = "subscription_date")
     private Date subscriptionDate;

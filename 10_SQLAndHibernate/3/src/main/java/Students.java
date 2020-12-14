@@ -6,7 +6,6 @@ import java.util.List;
 @Table(name = "Students")
 public class Students
 {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

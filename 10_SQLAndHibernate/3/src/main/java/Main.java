@@ -17,8 +17,8 @@ public class Main
         Session session = sessionfactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        Course course = session.get(Course.class,23);
-        course.getSubscription().stream().map(sub -> sub.getStudent().getName()).forEach(System.out::println);
+        Course course = session.get(Course.class,12);
+        System.out.println( course.getName());
 
         transaction.commit();
         sessionfactory.close();
