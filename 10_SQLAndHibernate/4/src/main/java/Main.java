@@ -9,16 +9,15 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main
 {
     public static void main(String[] args) {
 
-//        Map<String,String> mapLinkedPurchaseList = new HashMap<>();
-
+        KeyFK keyFK = new KeyFK();
+        List<KeyFK> keyFKList = new ArrayList<>();
+        
         StandardServiceRegistry registry =new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
         SessionFactory sessionfactory = metadata.getSessionFactoryBuilder().build();
@@ -34,11 +33,25 @@ public class Main
 
         for (PurchaseList purchase: purchaseLists)
         {
-            KeyFK keyFK = new KeyFK(purchase.getStudentName(),purchase.getCourseName());
-            LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(keyFK);
-            session.update(linkedPurchaseList);
-//            mapLinkedPurchaseList.put(purchase.getCourseName(),purchase.getStudentName());
+
+              String student = "From " + Students.class.getSimpleName() +" s " + " Where s.name = '" + purchase.getStudentName()+"'";
+              String course = "From " + Course.class.getSimpleName() +" c "+ " Where c.name = '" + purchase.getCourseName() + "'";
+
+              List<Students> students = session.createQuery(student).getResultList();
+              List<Course> courses = session.createQuery(course).getResultList();
+
+            keyFKList.add(new KeyFK(students.get(0).getId(),courses.get(0).getId()));
+
         }
+//        System.out.println(keyFKList.size());
+
+        for (int i = 0; i < keyFKList.size()-1; i++){
+        LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(keyFKList.get(i));
+        session.saveOrUpdate(linkedPurchaseList);
+      }
+        
+        //получил имя и курс студента с пурчейза. Теперь надо сделать запрос в базу по hql, для получения id
+        // потом тоже для студента и в конце записать всё в linkedPurchaselist
 
         transaction.commit();
         sessionfactory.close();

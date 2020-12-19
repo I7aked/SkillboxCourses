@@ -29,7 +29,7 @@ public class Course
     private Teachers teacher;
 
     @Column(name = "students_count")
-    private int studentsCount;
+    private Integer studentsCount;
 
     private int price;
 

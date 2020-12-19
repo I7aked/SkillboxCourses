@@ -7,43 +7,43 @@ public class KeyFK implements Serializable
 {
     public KeyFK(){}
 
-    public KeyFK(String studentName, String courseName){
-        this.courseName = courseName;
-        this.studentName = studentName;
+    public KeyFK(Integer studentId, Integer courseId){
+        this.courseId = courseId;
+        this.studentId = studentId;
     }
 
-    private String studentName;
+    private Integer studentId;
 
-    private String courseName;
+    private Integer courseId;
 
-    public String getStudentName() {
-        return studentName;
+    public Integer getStudentId() {
+        return studentId;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
     @Override
     public boolean equals(Object object) {
         if (object instanceof KeyFK) {
             KeyFK pk = (KeyFK)object;
-            return studentName.equals(pk.studentName) && courseName.equals(pk.courseName);
+            return studentId.equals(pk.studentId) && courseId.equals(pk.courseId);
         } else {
             return false;
         }
     }
     @Override
     public int hashCode() {
-        return studentName.hashCode() + courseName.hashCode();
+        return studentId.hashCode() + courseId.hashCode();
     }
 
 }

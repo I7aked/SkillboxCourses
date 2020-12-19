@@ -9,32 +9,32 @@ public class LinkedPurchaseList implements Serializable
     LinkedPurchaseList(){}
 
     LinkedPurchaseList(KeyFK keyFK){
-        studentName = keyFK.getStudentName();
-        courseName = keyFK.getCourseName();
+        studentId = keyFK.getStudentId();
+        courseId = keyFK.getCourseId();
     }
 
     @Id
-    @Column(name = "course_name")
-    private String courseName;
+    @Column(name = "course_id")
+    private Integer courseId;
 
     @Id
-    @Column(name = "student_name")
-    private String studentName;
+    @Column(name = "student_id")
+    private Integer studentId;
 
-    public String getCourseName() {
-        return courseName;
+    public Integer getCourseId() {
+        return courseId;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public Integer getStudentId() {
+        return studentId;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public void setStudentId(Integer studentId) {
+        this.studentId = studentId;
     }
 
 

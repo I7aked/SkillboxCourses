@@ -3,23 +3,16 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@IdClass(KeyFK.class)
 @Table(name = "PurchaseList")
 public class PurchaseList implements Serializable
 {
-    PurchaseList(){}
-
-    PurchaseList(KeyFK keyFK){
-        studentName = keyFK.getStudentName();
-        courseName = keyFK.getCourseName();
-    }
 
     @Id
-    @Column(name = "student_name", insertable = false, updatable = false)
+    @Column(name = "student_name")
     private String studentName;
 
     @Id
-    @Column(name = "course_name", insertable = false, updatable = false)
+    @Column(name = "course_name")
     private String courseName;
 
     @Column(name = "subscription_date")
