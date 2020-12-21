@@ -4,8 +4,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "PurchaseList")
-public class PurchaseList implements Serializable
-{
+public class PurchaseList implements Serializable {
 
     @Id
     @Column(name = "student_name")

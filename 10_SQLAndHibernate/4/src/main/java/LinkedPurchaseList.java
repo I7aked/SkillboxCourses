@@ -4,11 +4,11 @@ import java.io.Serializable;
 @Entity
 @IdClass(KeyFK.class)
 @Table(name = "LinkedPurchaseList")
-public class LinkedPurchaseList implements Serializable
-{
-    LinkedPurchaseList(){}
+public class LinkedPurchaseList implements Serializable {
+    LinkedPurchaseList() {
+    }
 
-    LinkedPurchaseList(KeyFK keyFK){
+    LinkedPurchaseList(KeyFK keyFK) {
         studentId = keyFK.getStudentId();
         courseId = keyFK.getCourseId();
     }

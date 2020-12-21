@@ -3,8 +3,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Courses")
-public class Course
-{
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -38,9 +37,9 @@ public class Course
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "Subscriptions",
-        joinColumns = {@JoinColumn(name = "course_id")},
-        inverseJoinColumns = {@JoinColumn(name = "student_id")})
-    public  List<Students> studentsList;
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = {@JoinColumn(name = "student_id")})
+    public List<Students> studentsList;
 
     public List<Subscriptions> getSubscription() {
         return subscription;
@@ -50,8 +49,8 @@ public class Course
         this.subscription = subscription;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="course")
-    private List <Subscriptions> subscription;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "course")
+    private List<Subscriptions> subscription;
 
 
     public int getId() {

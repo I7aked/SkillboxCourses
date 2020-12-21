@@ -11,14 +11,13 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.*;
 
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
 
-        KeyFK keyFK = new KeyFK();
-        List<KeyFK> keyFKList = new ArrayList<>();
-        
-        StandardServiceRegistry registry =new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+//        KeyFK keyFK = new KeyFK();
+//        List<KeyFK> keyFKList = new ArrayList<>();
+
+        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
         Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
         SessionFactory sessionfactory = metadata.getSessionFactoryBuilder().build();
 
@@ -31,25 +30,25 @@ public class Main
         query.select(root);
         List<PurchaseList> purchaseLists = session.createQuery(query).getResultList();
 
-        for (PurchaseList purchase: purchaseLists)
-        {
+        for (PurchaseList purchase : purchaseLists) {
 
-              String student = "From " + Students.class.getSimpleName() +" s " + " Where s.name = '" + purchase.getStudentName()+"'";
-              String course = "From " + Course.class.getSimpleName() +" c "+ " Where c.name = '" + purchase.getCourseName() + "'";
+            String student = "From " + Students.class.getSimpleName() + " s " + " Where s.name = '" + purchase.getStudentName() + "'";
+            String course = "From " + Course.class.getSimpleName() + " c " + " Where c.name = '" + purchase.getCourseName() + "'";
 
-              List<Students> students = session.createQuery(student).getResultList();
-              List<Course> courses = session.createQuery(course).getResultList();
+            List<Students> students = session.createQuery(student).getResultList();
+            List<Course> courses = session.createQuery(course).getResultList();
 
-            keyFKList.add(new KeyFK(students.get(0).getId(),courses.get(0).getId()));
-
+//            keyFKList.add(new KeyFK(students.get(0).getId(),courses.get(0).getId()));
+            LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(new KeyFK(students.get(0).getId(), courses.get(0).getId()));
+            session.saveOrUpdate(linkedPurchaseList);
         }
 //        System.out.println(keyFKList.size());
 
-        for (int i = 0; i < keyFKList.size()-1; i++){
-        LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(keyFKList.get(i));
-        session.saveOrUpdate(linkedPurchaseList);
-      }
-        
+//        for (int i = 0; i < keyFKList.size()-1; i++){
+//        LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(keyFKList.get(i));
+//        session.saveOrUpdate(linkedPurchaseList);
+//      }
+
         //получил имя и курс студента с пурчейза. Теперь надо сделать запрос в базу по hql, для получения id
         // потом тоже для студента и в конце записать всё в linkedPurchaselist
 
