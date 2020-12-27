@@ -20,7 +20,6 @@ public class Main
         ImageResizer resizer = new ImageResizer(files1,newWidth,dstFolder);
         new Thread(resizer).start();
 
-        System.out.println(foreign);
         File[] files2 = new File[foreign];
         System.arraycopy(files,foreign,files2,0,foreign);
         resizer = new ImageResizer(files2,newWidth,dstFolder);
