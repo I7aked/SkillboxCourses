@@ -35,13 +35,14 @@ public class Bank {
                 System.out.println(accounts.get(fromAccountNum).isAlive());
             }
         }
+
         synchronized (accounts.get(fromAccountNum)) {
+            synchronized (accounts.get(toAccountNum)){
             if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
                 System.out.println("Недостаточно денег на счёте или счёт заморожен");
             } else {
                 accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
-                synchronized (accounts.get(toAccountNum)) {
-                    accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
+                accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
                 }
             }
         }

@@ -9,7 +9,7 @@ public class Main {
         String second = "second";
         String third = "third";
         Bank bank = new Bank(accounts);
-        bank.addNewKlient(new Account(first, 100000, true));
+        bank.addNewKlient(new Account(first, 500000, true));
         bank.addNewKlient(new Account(second, 600000, true));
         bank.addNewKlient(new Account(third, 800000, true));
 
