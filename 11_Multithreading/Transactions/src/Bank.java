@@ -29,18 +29,22 @@ public class Bank {
      */
     public void transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
 
-        if (amount > 50000) {
-            accounts.get(fromAccountNum).setAlive(!isFraud(fromAccountNum, toAccountNum, amount));
+        synchronized (accounts.get(fromAccountNum)) {
+            if (amount > 50000 & accounts.get(fromAccountNum).isAlive()) {
+                accounts.get(fromAccountNum).setAlive(!isFraud(fromAccountNum, toAccountNum, amount));
+                System.out.println(accounts.get(fromAccountNum).isAlive());
+            }
         }
-        synchronized (Bank.class) {
-            if (getBalance(fromAccountNum) < amount & !accounts.get(fromAccountNum).isAlive() & !accounts.get(toAccountNum).isAlive()) {
+        synchronized (accounts.get(fromAccountNum)) {
+            if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
                 System.out.println("Недостаточно денег на счёте или счёт заморожен");
             } else {
                 accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
-                accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
+                synchronized (accounts.get(toAccountNum)) {
+                    accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
+                }
             }
         }
-
     }
 
     /**
