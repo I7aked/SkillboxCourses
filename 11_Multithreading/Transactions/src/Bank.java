@@ -35,12 +35,12 @@ public class Bank {
                     accounts.get(fromAccountNum).setAlive(!isFraud(fromAccountNum, toAccountNum, amount));
                     System.out.println(accounts.get(fromAccountNum).isAlive());
                 }
-            }
-            if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
-                System.out.println("Недостаточно денег на счёте или счёт заморожен");
-            } else {
-                accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
-                accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
+                if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
+                    System.out.println("Недостаточно денег на счёте или счёт заморожен");
+                } else {
+                    accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
+                    accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
+                }
             }
         }
     }
