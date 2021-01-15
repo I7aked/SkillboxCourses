@@ -4,7 +4,7 @@ import java.util.Random;
 public class Bank {
     private HashMap<String, Account> accounts;
     private final Random random = new Random();
-    private final Object lock = new Object();
+
 
     public Bank() {
     }
@@ -30,22 +30,31 @@ public class Bank {
      */
     public void transfer(String fromAccountNum, String toAccountNum, long amount) throws InterruptedException {
 
-        synchronized (lock) {
-            synchronized (accounts.get(toAccountNum)) {
-                synchronized (accounts.get(fromAccountNum)) {
-                    if (amount > 50000 & accounts.get(fromAccountNum).isAlive()) {
-                        accounts.get(fromAccountNum).setAlive(!isFraud(fromAccountNum, toAccountNum, amount));
-                        System.out.println(accounts.get(fromAccountNum).isAlive());
-                    }
-                    if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
-                        System.out.println("Недостаточно денег на счёте или счёт заморожен");
-                    } else {
-                        accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
-                        accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
-                    }
+        String firstThread = "";
+        String secondThread = "";
+        if (accounts.get(fromAccountNum).getMoney() - amount > accounts.get(toAccountNum).getMoney()) {
+            firstThread = "" + fromAccountNum;
+            secondThread = "" + toAccountNum;
+        } else {
+            firstThread = "" + toAccountNum;
+            secondThread = "" + fromAccountNum;
+        }
+
+        synchronized (accounts.get(firstThread)) {
+            synchronized (accounts.get(secondThread)) {
+                if (amount > 50000 & accounts.get(fromAccountNum).isAlive()) {
+                    accounts.get(fromAccountNum).setAlive(!isFraud(fromAccountNum, toAccountNum, amount));
+                    System.out.println(accounts.get(fromAccountNum).isAlive());
+                }
+                if (getBalance(fromAccountNum) < amount || !accounts.get(fromAccountNum).isAlive() || !accounts.get(toAccountNum).isAlive()) {
+                    System.out.println("Недостаточно денег на счёте или счёт заморожен");
+                } else {
+                    accounts.get(fromAccountNum).setMoney(getBalance(fromAccountNum) - amount);
+                    accounts.get(toAccountNum).setMoney(getBalance(toAccountNum) + amount);
                 }
             }
         }
+
     }
 
     /**
