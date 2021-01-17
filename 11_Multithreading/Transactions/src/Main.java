@@ -9,9 +9,9 @@ public class Main {
         String second = "second";
         String third = "third";
         Bank bank = new Bank(accounts);
-        bank.addNewKlient(new Account(first, 500000, true));
-        bank.addNewKlient(new Account(second, 600000, true));
-        bank.addNewKlient(new Account(third, 800000, true));
+        bank.addNewKlient(new Account(first, 500000, true, 1));
+        bank.addNewKlient(new Account(second, 600000, true, 2));
+        bank.addNewKlient(new Account(third, 800000, true, 3));
 
         Thread thread1 = new Thread(new Runnable() {
             @Override
@@ -20,6 +20,7 @@ public class Main {
                 for (int i = 0; i < 10; i++)
                     try {
                         bank.transfer(first, second, random.nextInt(55000));
+
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -32,7 +33,7 @@ public class Main {
                 Random random = new Random();
                 for (int i = 0; i < 10; i++)
                     try {
-                        bank.transfer(second, third, random.nextInt(60000));
+                        bank.transfer(second, first, random.nextInt(60000));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

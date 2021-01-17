@@ -1,15 +1,17 @@
-public class Account {
+public class Account implements Comparable<Account> {
     private long money;
     private String accNumber;
     private volatile boolean isAlive;
+    public Integer id;
 
     public Account() {
     }
 
-    public Account(String accNumber, long money, boolean isAlive) {
+    public Account(String accNumber, long money, boolean isAlive, int id) {
         this.isAlive = isAlive;
         this.accNumber = accNumber;
         this.money = money;
+        this.id = id;
     }
 
     public boolean isAlive() {
@@ -36,4 +38,14 @@ public class Account {
         this.accNumber = accNumber;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+
+    @Override
+    public int compareTo(Account account) {
+
+        return this.id.compareTo(account.id);
+    }
 }
