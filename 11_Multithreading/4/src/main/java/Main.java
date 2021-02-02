@@ -1,3 +1,6 @@
+import java.util.Set;
+import java.util.TreeSet;
+
 public class Main
 {
     //Пишу в одном потоке программу ИЛИ сразу придумываю принцип разделения
@@ -9,10 +12,11 @@ public class Main
     // собирая всё в кучу
     //ПОка так, потом придумаем дальше
     public static void main(String[] args) {
+        Set<String> listSites = new TreeSet<String>();
         String url = "https://lenta.ru/";
-        LinksName linksName = new LinksName();
-        linksName.get_links(url);
-        linksName.getAllURL().forEach(System.out::println);
+        SiteMapExtractor extractor = new SiteMapExtractor(url);
+        extractor.get_links(url);
+        extractor.listSites.forEach(System.out::println);
 
 
 
