@@ -1,88 +1,59 @@
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SiteMapExtractor
 {
-    Set<String> listSites = new TreeSet<String>();
+    private static Set<String> urls = new HashSet<>();
     String pageUrl;
-    int flag = 0;
+
     public SiteMapExtractor() {}
 
     public SiteMapExtractor(String pageUrl)  {
         this.pageUrl = pageUrl;
     }
 
-    //    public Set<String> uniqueURL = new HashSet<String>();
-    public Map<String, Boolean> allURL = new TreeMap<>();
 
-
-    //метод должен возвращать список ссылок имеющихся на странице
-    public void get_links( String pageUrl) {
+    public void getChaildUrls() {
+//        Set<String> urls = new HashSet<>();
 
         try {
-            Document doc = Jsoup.connect(pageUrl).userAgent("Mozilla").get();
-            Elements links = doc.select("a");
-//            if (links.isEmpty()) {
-//                return;
-//            }
+            Document doc = Jsoup.connect(pageUrl).userAgent("Mozilla/5.0")
+                    .ignoreHttpErrors(true).get();
 
-            for (Element element : links)
-            {
-                String thisLink = (element.attr("abs:href"));
-                if (thisLink.contains(pageUrl))
-                {
-                   if (listSites.contains(thisLink) && !thisLink.equals(pageUrl))
-                    {
-                        listSites.add("\t" + thisLink);
-                    }else  if (!listSites.contains(thisLink))
-                    {
-                       listSites.add(thisLink);
-                       allURL.put(thisLink,false);
-                   }
+            URL baseUrl = new URL(pageUrl);
+            urls = doc.select("a").stream()
+                    .map(e -> getChildUrl(baseUrl,e.attr("href")))
+                    .filter(u -> u.startsWith(pageUrl))
+                    .filter(u -> u.matches(pageUrl + "[a-zA-Z]+/]"))
+                    .collect(Collectors.toSet());
 
-                   if (pageUrl.equals(thisLink))
-                   {
-                       allURL.replace(thisLink,false,true);
-                       flag += 1;
-                   }
-                }
-            }
-
-            if (flag == allURL.size() - 1 ){return;}
-
-            for (Map.Entry entry : allURL.entrySet()) {
-
-                if (entry.getValue().equals(false))
-                {
-                    get_links(entry.getKey().toString());
-                }
-            }
-//
-//            links.stream().map((link) -> link.attr("abs:href")).forEachOrdered((this_url) -> {
-//                boolean add = uniqueURL.add(this_url);
-//                if (add && this_url.contains(url)) {
-//                    allURL.add("\t" + this_url );
-//                    get_links(this_url);
-//                }
-//            });
-
-//            links.stream().map(link -> link.attr("abs:href")).forEach(link ->allURL.add(link) );
-////            allURL.addAll(uniqueURL);
         } catch (Exception  ex) {
             ex.printStackTrace();
         }
     }
 
-    public Map<String, Boolean> getAllURL()
-    {
-        return allURL;
+    //проверяем является ли ссылка внутренней, то есть содержит ли знак # если да,обрезаем его
+
+    private String getChildUrl (URL baseUrl, String href) {
+        try {
+            String childUrl = new URL(baseUrl, href).toString();
+            int anchorIndex = childUrl.indexOf('#');
+            if (anchorIndex > 0){
+                childUrl = childUrl.substring(0,anchorIndex);
+            }
+            return childUrl;
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            System.out.println("Некорректная ссылка");
+            return "";
+        }
     }
 
-    public Set<String> getListSites(){return listSites;}
+    public Set<String> getUrls(){return urls;}
 
 }
