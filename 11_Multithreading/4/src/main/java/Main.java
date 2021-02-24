@@ -1,15 +1,14 @@
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.ForkJoinPool;
 
 public class Main
 {
     public static void main(String[] args) {
         String url = "https://skillbox.ru/";
-        SiteMapExtractor extractor = new SiteMapExtractor(url);
-        extractor.getChaildUrls();
-        extractor.getUrls().forEach(System.out::println);
-        System.out.println(extractor.getUrls().size());
-
+        Set<String> urls = new ForkJoinPool().invoke( new SiteMapExtractor(url));
+        urls.forEach(System.out::println);
 
 
     }
