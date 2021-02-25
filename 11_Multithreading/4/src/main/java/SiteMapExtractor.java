@@ -17,7 +17,6 @@ public class SiteMapExtractor extends RecursiveTask<Set<String>> {
     @Override
     protected Set<String> compute() {
         getChaildUrls();
-
         return getUrls();
     }
 
@@ -28,6 +27,7 @@ public class SiteMapExtractor extends RecursiveTask<Set<String>> {
 
     public void getChaildUrls() {
         Set<String> urls = new HashSet<>();
+        List<SiteMapExtractor> extractorList = new LinkedList<>();
 
         try {
             Document doc = Jsoup.connect(pageUrl).userAgent("Mozilla/5.0")
@@ -45,14 +45,17 @@ public class SiteMapExtractor extends RecursiveTask<Set<String>> {
                 return;
             } else {
                 for (String url : urls) {
-                    if (!getUrls().contains(url)) {
+                    if (!SiteMapExtractor.urls.contains(url)) {
                         SiteMapExtractor extractor = new SiteMapExtractor(url);
                         extractor.fork();
-                        extractor.join();
+                        extractorList.add(extractor);
                     }
                 }
             }
 
+            for (SiteMapExtractor extractor : extractorList) {
+                extractor.join();
+            }
 
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -77,5 +80,6 @@ public class SiteMapExtractor extends RecursiveTask<Set<String>> {
     public Set<String> getUrls() {
         return urls;
     }
+
 
 }

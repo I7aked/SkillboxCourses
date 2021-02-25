@@ -8,7 +8,7 @@ public class Main
     public static void main(String[] args) {
         String url = "https://skillbox.ru/";
         Set<String> urls = new ForkJoinPool().invoke( new SiteMapExtractor(url));
-        urls.forEach(System.out::println);
+        urls.stream().sorted().forEach(System.out::println);
 
 
     }
