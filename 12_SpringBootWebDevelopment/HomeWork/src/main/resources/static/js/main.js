@@ -78,19 +78,12 @@ $(function(){
 //    {
 //        var data = $('#book-form form').serialize();
 //                $.ajax({
-//                    method: "GET",
+//                    method: "DELETE",
 //                    url: '/notes/',
 //                    data: data,
 //                    success: function(response)
 //                    {
-//                        $('#book-form').css('display', 'none');
-//                        var book = {};
-//                        book.id = response;
-//                        var dataArray = $('#book-form form').serializeArray();
-//                        for(i in dataArray) {
-//                            book[dataArray[i]['name']] = dataArray[i]['value'];
-//                        }
-//                        appendBook(book);
+//
 //                    }
 //                });
 //                return false;

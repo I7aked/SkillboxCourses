@@ -2,14 +2,18 @@ package model;
 
 import java.util.Date;
 
-public class Note
-{
-    //private boolean isAlive = true;
-    private String name;
+public class Note {
+
+    public Note() {}
+
+    public Note(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
     private int id;
 
-
-    public Note(){}
+    private String name;
 
     public Note(String name) {
         this.name = name;
@@ -30,10 +34,6 @@ public class Note
     public void setId(int id) {
         this.id = id;
     }
-
-
-
-
 
 
 }

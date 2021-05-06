@@ -77,25 +77,16 @@ $(function(){
 //    $('#delete-books').click(function()
 //    {
 //        var data = $('#book-form form').serialize();
-//                    $.ajax({
-//                       method: "DELETE",
-//                       url: '/notes/',
-//                       data: data,
-//                      success: function(response)
-//                       {
-//                          $('#book-form').css('display', 'none');
-//                           var book = {};
-//                           book.id = response;
-//                            var dataArray = $('#book-form form').serializeArray();
-//                           int k = 0;
-//                           for(i in dataArray) {
-//                                book[dataArray[i]['name']] = dataArray[i]['value'];
-//                                k = i;
-//                          }
-//                         book.splice(1,k);
-//                      }
-//                    });
-//                   return false;
+//                $.ajax({
+//                    method: "DELETE",
+//                    url: '/notes/',
+//                    data: data,
+//                    success: function(response)
+//                    {
+//
+//                    }
+//                });
+//                return false;
 //    });
 
 
