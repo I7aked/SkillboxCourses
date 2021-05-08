@@ -8,6 +8,8 @@ public class Storage {
     private static int currentId = 1;
     private static HashMap<Integer, Note> noteList = new HashMap<>();
 
+
+
     public static List<Note> getAllNotes() {
         ArrayList<Note> noteArrayList = new ArrayList<>();
         noteArrayList.addAll(noteList.values());

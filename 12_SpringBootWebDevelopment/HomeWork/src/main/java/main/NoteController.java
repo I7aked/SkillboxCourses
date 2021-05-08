@@ -10,38 +10,49 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
+@RequestMapping(value = "/notes/")
 public class NoteController {
 
-    @GetMapping("/notes/")
+    @GetMapping("")
     public List<Note> pages() {
         return Storage.getAllNotes();
     }
 
-    @PostMapping("/notes/")
-    public List<Note> addNote(String name) {
-        Note note = new Note(name);
+    @PostMapping("")
+    public ResponseEntity addNote(@RequestBody String str) {
+        Note note = new Note(str);
         Storage.addNote(note);
-        return Storage.getAllNotes();
+        return ResponseEntity.ok(HttpStatus.OK);
     }
+//    public List<Note> addNote(String name) {
+//        Note note = new Note(name);
+//        Storage.addNote(note);
+//        return Storage.getAllNotes();
+//    }
 
 
-    @PutMapping("/notes/{id}")
-    public Note putNote(@PathVariable int id, String newNote) {
-        Storage.updateNote(id, newNote);
-        return Storage.getNote(id);
+    @PutMapping("{id}")
+    public ResponseEntity putNote(@RequestBody @PathVariable int id, String str) {
+        Storage.updateNote(id, str);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
-    @DeleteMapping("/notes/")
+//    public Note putNote(@PathVariable int id, String newNote) {
+//        Storage.updateNote(id, newNote);
+//        return Storage.getNote(id);
+//    }
+
+    @DeleteMapping("")
     public List<Note> deleteAll() {
         Storage.deleteAllNote();
         return Storage.getAllNotes();
     }
 
-    @GetMapping("/notes/{id}")
+    @GetMapping("{id}")
     public Note indexPage(@PathVariable int id) {
         return Storage.getNote(id);
     }
 
-    @DeleteMapping("/notes/{id}")
+    @DeleteMapping("{id}")
     public List<Note> deletePage(@PathVariable int id) {
         Storage.deleteOneNote(id);
         return Storage.getAllNotes();
