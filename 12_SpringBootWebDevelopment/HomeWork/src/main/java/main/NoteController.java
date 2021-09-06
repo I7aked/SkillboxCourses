@@ -48,7 +48,7 @@ public class NoteController {
     }
 
     @GetMapping("{id}")
-    public Note indexPage(@PathVariable int id) {
+    public Note indexPage(@RequestBody @PathVariable int id) {
         return Storage.getNote(id);
     }
 

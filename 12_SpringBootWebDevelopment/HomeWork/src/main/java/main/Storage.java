@@ -3,10 +3,11 @@ package main;
 import model.Note;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Storage {
     private static int currentId = 1;
-    private static HashMap<Integer, Note> noteList = new HashMap<>();
+    private static ConcurrentHashMap<Integer, Note> noteList = new ConcurrentHashMap<>();
 
 
 
