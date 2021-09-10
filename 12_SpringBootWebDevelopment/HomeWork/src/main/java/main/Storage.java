@@ -1,6 +1,6 @@
 package main;
 
-import model.Note;
+import main.model.Note;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

@@ -1,6 +1,6 @@
 //package main;
 //
-//import model.Note;
+//import main.model.Note;
 //import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.context.annotation.ComponentScans;
 //import org.springframework.stereotype.Controller;

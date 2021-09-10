@@ -36,7 +36,7 @@ $(function(){
             url: '/notes/' + bookId,
             success: function(response)
             {
-                var code = '<span>Дата релиза:' + response.year + '</span>';
+                var code = '<span>Дата релиза:' + '</span>';
                 link.parent().append(code);
             },
             error: function(response)
