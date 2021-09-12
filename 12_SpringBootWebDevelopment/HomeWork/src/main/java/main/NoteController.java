@@ -35,9 +35,15 @@ public class NoteController {
 
     @PutMapping("{id}")
     public ResponseEntity putNote(@RequestBody @PathVariable int id, String str) {
-        noteReposirore.deleteById(id);
-        noteReposirore.save(new Note(str,id));// не знаю как именно обновить
-        Storage.updateNote(id, str);
+        Optional<Note> optionalNote =  noteReposirore.findById(id);
+        if (!optionalNote.isPresent())
+        {
+         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        else {
+            noteReposirore.findById(id).get().setName(str);
+    }
+
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
