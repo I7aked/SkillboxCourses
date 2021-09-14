@@ -33,8 +33,8 @@ public class NoteController {
 
 
 
-    @PutMapping("{id}")
-    public ResponseEntity putNote(@RequestBody @PathVariable int id, String str) {
+    @PutMapping(value ="{id}")
+    public ResponseEntity putNote(  @PathVariable int id, @RequestBody String str) {
         Optional<Note> optionalNote =  noteReposirore.findById(id);
         if (!optionalNote.isPresent())
         {
