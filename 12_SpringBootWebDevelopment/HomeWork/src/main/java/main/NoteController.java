@@ -34,14 +34,15 @@ public class NoteController {
 
 
     @PutMapping(value ="{id}")
-    public ResponseEntity putNote(  @PathVariable int id, @RequestBody String str) {
+    public ResponseEntity putNote(  @PathVariable int id, @RequestBody Note note) {
         Optional<Note> optionalNote =  noteReposirore.findById(id);
         if (!optionalNote.isPresent())
         {
          return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         else {
-            noteReposirore.findById(id).get().setName(str);
+
+            noteReposirore.findById(id).get().setName(note.getName());
     }
 
         return ResponseEntity.ok(HttpStatus.OK);
@@ -55,7 +56,7 @@ public class NoteController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity get(@RequestBody @PathVariable int id) {
+    public ResponseEntity get( @PathVariable int id) {
 
         Optional<Note> optionalNote =  noteReposirore.findById(id);
         if (!optionalNote.isPresent())
