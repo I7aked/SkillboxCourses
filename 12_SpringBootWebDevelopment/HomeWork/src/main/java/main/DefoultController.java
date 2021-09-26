@@ -1,35 +1,37 @@
-//package main;
-//
-//import main.model.Note;
-//import org.springframework.context.annotation.ComponentScan;
-//import org.springframework.context.annotation.ComponentScans;
-//import org.springframework.stereotype.Controller;
-//import org.springframework.web.bind.annotation.*;
-//
-//
-//import java.util.Map;
-//import java.util.Random;
-//
-//@Controller
-//public class DefoultController
-//{
-//    @GetMapping
-//    public String indexPage(Map<String, Object> model)
-//    {
-//        Iterable<Note> notes = Storage.getAllNotes();
-//        model.put("notes",notes);
-//        return "index";
-//    }
-//
-//    @PostMapping
-//    public String addNote(@RequestParam String name,  Map<String,Object> model)
-//    {
-//        Note note = new Note (name);
-//        Storage.addNote(note);
-//        Iterable<Note> notes = Storage.getAllNotes();
-//        model.put("notes",notes);
-//        return "index";
-//    }
-//
-//
-//}
+package main;
+
+import main.model.Note;
+import main.model.NoteReposirore;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Random;
+
+@Controller
+public class DefoultController {
+
+    @Autowired
+    NoteReposirore noteReposirore;
+
+
+    @RequestMapping("/")
+    public String index(Model model) {
+        Iterable<Note> noteIterable = noteReposirore.findAll();
+        ArrayList<Note> notes = new ArrayList<>();
+        for (Note note : noteIterable) {
+            notes.add(note);
+        }
+        model.addAttribute("notes", notes);
+        model.addAttribute("notesCount", notes.size());
+        return "index";
+    }
+
+
+}

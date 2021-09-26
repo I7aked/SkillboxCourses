@@ -17,12 +17,13 @@
             <button id="save-book">Сохранить</button>
         </form>
     </div>
-    <h1>Заметошная (<span th:text="${booksCount}">0</span>)</h1>
+    <h1>Заметошная (<span th:text="${notesCount}">0</span>)</h1>
     <button id="show-add-book-form">Добавить заметку</button>
     <button id="delete-books">Удалить всё</button>
     <br><br>
     <div id="book-list">
-        <div th:each="book : ${books}">
+
+        <div th:each="book : ${notes}">
             <a href="#" class="book-link" th:attr="data-id=${book.id}" th:text="${book.name}"></a>
         </div>
     </div>
