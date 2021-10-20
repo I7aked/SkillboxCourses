@@ -8,6 +8,7 @@ import org.redisson.client.RedisConnectionException;
 import org.redisson.config.Config;
 
 import java.util.Date;
+import java.util.Random;
 
 import static java.lang.System.out;
 
@@ -16,11 +17,16 @@ public class RedisStorage {
     // Объект для работы с Redis
     private RedissonClient redisson;
 
+    int count;
     // Объект для работы с ключами
     private RKeys rKeys;
 
+    public RScoredSortedSet<Integer> getOnlineUsers() {
+        return onlineUsers;
+    }
+
     // Объект для работы с Sorted Set'ом
-    private RScoredSortedSet<String> onlineUsers;
+    private RScoredSortedSet<Integer> onlineUsers;
 
     private final static String KEY = "Users";
 
@@ -31,7 +37,7 @@ public class RedisStorage {
     // Пример вывода всех ключей
     public void listKeys() {
         Iterable<String> keys = rKeys.getKeys();
-        for(String key: keys) {
+        for (String key : keys) {
             out.println("KEY: " + key + ", type:" + rKeys.getType(key));
         }
     }
@@ -50,15 +56,42 @@ public class RedisStorage {
         rKeys.delete(KEY);
     }
 
+
+
     void shutdown() {
         redisson.shutdown();
     }
 
     // Фиксирует посещение пользователем страницы
-    void logPageVisit(int user_id)
-    {
+    void logPageVisit(int userId) {
         //ZADD ONLINE_USERS
-        onlineUsers.add((double) user_id, "Пользователь "+ user_id);
+        onlineUsers.add((double) userId, userId);
+    }
+
+    private static void showFirstUser(RScoredSortedSet<Integer> quere) {
+        int userId = quere.first();
+        System.out.printf(" - На главной странице показываем пользователя %d%n", userId);
+        quere.add(quere.lastScore() + 1, userId);
+    }
+
+    private static void reLocationUser(RScoredSortedSet<Integer> quere) throws InterruptedException {
+        int luckyCount = new Random().nextInt(10);
+        if (luckyCount > 8) {
+            int luckyNumber = new Random().nextInt(100);
+            quere.add(quere.firstScore(), luckyNumber);
+            System.out.println(" - ПОльзователь  " + luckyNumber +  " Оплатил подписку");
+            Thread.sleep(1000);
+        }
+    }
+
+
+     void workRound() throws InterruptedException {
+        do {
+            count++;
+            if (count == 100 )  count = 0;
+            showFirstUser(onlineUsers);
+            reLocationUser(onlineUsers);
+            } while (true);
     }
 
     // Удаляет
