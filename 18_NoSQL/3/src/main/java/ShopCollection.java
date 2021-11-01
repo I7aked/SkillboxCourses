@@ -20,35 +20,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ShopCollection
-{
-//    Document doc = new Document();
-
-    //из кейс вызов добавления магазина
-    public Document addShop(String str, List<String> listShops)
-    {
-       return new Document(str,listToJson(listShops));
+public class ShopCollection {
+    public Document addShop(String name) {
+        return Document.parse(String.format("{ name: \"%s\"}", name));
     }
 
-    public Bson answerSecond (String newProduct, List<String> listProduct, String shopName)
-    {
-        listProduct.add(newProduct);
-        String newListProducts = listToJson(listProduct);
-        System.out.println("second " + listProduct);
-        return Updates.combine(
-                Updates.set(shopName,newListProducts));
+    public Bson answerSecond(String newProduct) {
+        return Updates.addToSet("products", newProduct);
     }
 
-    public Bson answerFirst(String shopName, List<String> list)
-    {
-        return new Document().append(shopName, listToJson(list));
+    public Bson answerFirst(String shopName) {
+        return BsonDocument.parse(String.format("{name:\"%s\"}", shopName));
     }
-
-    private String listToJson(List<String> list)
-    {
-        Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
-        return prettyGson.toJson(list);
-
-    }
-
 }
