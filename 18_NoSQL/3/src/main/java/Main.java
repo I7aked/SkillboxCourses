@@ -3,6 +3,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.MongoClient;
 import com.mongodb.client.*;
+import com.mongodb.client.model.Aggregates;
 import com.mongodb.client.model.Updates;
 import org.bson.BsonDocument;
 import org.bson.Document;
@@ -13,10 +14,7 @@ import org.bson.json.JsonWriterSettings;
 import javax.print.Doc;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.Consumer;
 
 import static com.mongodb.client.model.Filters.eq;
@@ -60,15 +58,14 @@ public class Main {
                         flag = false;
                         break;
                     case "4":
-                        List<Document> documentList = querry();
-
-                        MongoCursor<Document> cursor = shopCollection.aggregate(documentList).cursor();
+                        MongoCursor<Document> cursor = shopCollection.aggregate(querry()).cursor();
                         while (cursor.hasNext()) {
                             Document document = cursor.next();
                             System.out.println(" минимальная цена товара " + document.getString("minprice"));
                             System.out.println(" максимальная цена товара " + document.getString("maxprice"));
                             System.out.println(" средняя цена товара " + document.getString("avgprice"));
                             System.out.println(" всего различных продуктов  " + document.getInteger("uniproduct"));
+                            System.out.println(" Товаров дешевле 100 р - " + document.get("lessThen100count"));
                             System.out.println(" Статистика по магазину - " + document.get("_id").toString().replaceAll(".*=", "").replaceAll("}}", ""));
                             System.out.println();
                         }
@@ -81,9 +78,7 @@ public class Main {
                 exception.printStackTrace();
                 System.out.println("Неправильный формат команды!");
             }
-
         }
-
     }
 
     private static List<Document> querry() {
@@ -109,7 +104,8 @@ public class Main {
                         .append("avgprice",
                                 new Document("$avg", "$productList.price"))
                         .append("uniproduct",
-                                new Document("$sum", 1)));
+                                new Document("$sum", 1))
+                        .append("lessThen100count", Document.parse("{$sum:{$cond:[{$lt:[\"productList.price\",100]},0,1]}  } ")));
         listBson.add(group);
 
         return listBson;
