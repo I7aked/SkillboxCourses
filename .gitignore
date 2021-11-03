@@ -3,6 +3,7 @@
 *.iml
 *.xml
 */out/
-
+*CarNumberGenerator/res/
+*.gitkeep
 
 
