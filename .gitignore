@@ -6,4 +6,4 @@
 *CarNumberGenerator/res/
 *.gitkeep
 19_Performance/
-
+*/target/
