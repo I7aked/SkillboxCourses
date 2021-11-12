@@ -21,35 +21,36 @@ public class Loader {
 
     public static void main(String[] args) throws Exception {
         String fileName = "res/data-1M.xml";
-
-        long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
-        Handler handler = new Handler();
-        parser.parse(new File(fileName), handler);
-        handler.printDuplicatedVoters();
-        System.out.println(" Использование памяти при вычислении SAXParser'ом ="
-                + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usage));
-
-        usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        parseFile(fileName);
-
-        //Printing results
-        System.out.println("Voting station work times: ");
-        for (Integer votingStation : voteStationWorkTimes.keySet()) {
-            WorkTime workTime = voteStationWorkTimes.get(votingStation);
-//            System.out.println("\t" + votingStation + " - " + workTime);
-        }
-
-        System.out.println("Duplicated voters: ");
-        for (Voter voter : voterCounts.keySet()) {
-            Integer count = voterCounts.get(voter);
-            if (count > 1) {
-                System.out.println("\t" + voter + " - " + count);
-            }
-        }
-        System.out.println(" Использование памяти при вычислении DOMParser'ом ="
-                + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usage));
+        int count =900000;
+        System.out.println((int) count/1000000);
+//        long usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+//        SAXParserFactory factory = SAXParserFactory.newInstance();
+//        SAXParser parser = factory.newSAXParser();
+//        Handler handler = new Handler();
+//        parser.parse(new File(fileName), handler);
+//        handler.printDuplicatedVoters();
+//        System.out.println(" Использование памяти при вычислении SAXParser'ом ="
+//                + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usage));
+//
+//        usage = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+//        parseFile(fileName);
+//
+//        //Printing results
+//        System.out.println("Voting station work times: ");
+//        for (Integer votingStation : voteStationWorkTimes.keySet()) {
+//            WorkTime workTime = voteStationWorkTimes.get(votingStation);
+////            System.out.println("\t" + votingStation + " - " + workTime);
+//        }
+//
+//        System.out.println("Duplicated voters: ");
+//        for (Voter voter : voterCounts.keySet()) {
+//            Integer count = voterCounts.get(voter);
+//            if (count > 1) {
+//                System.out.println("\t" + voter + " - " + count);
+//            }
+//        }
+//        System.out.println(" Использование памяти при вычислении DOMParser'ом ="
+//                + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() - usage));
     }
 
     private static void parseFile(String fileName) throws Exception {
