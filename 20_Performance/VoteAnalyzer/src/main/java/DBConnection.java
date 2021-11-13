@@ -44,8 +44,7 @@ public class DBConnection {
         insertQuery.add(query);
         for (StringBuilder builder : insertQuery) {
             String sql = "INSERT INTO voter_count(name, birthDate, `count`)" +
-                    "VALUES" + builder.toString() +
-                    "ON DUPLICATE KEY UPDATE `count` = `count` + 1";
+                    "VALUES" + builder.toString();
             DBConnection.getConnection().createStatement().execute(sql);
         }
         System.out.println(counts);

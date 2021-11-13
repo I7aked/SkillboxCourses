@@ -23,8 +23,10 @@ public class Loader {
 
     public static void main(String[] args) throws Exception {
         String fileName = "C:\\Users\\User.DESKTOP-64BU9IM\\Desktop\\java\\Skillbox\\java_basics\\20_Performance\\VoteAnalyzer\\src\\main\\resources/data-1572M.xml";
+        long start = System.currentTimeMillis();
         parseFile(fileName);
         DBConnection.printVoterCounts();
+        System.out.println(System.currentTimeMillis() - start + " mc");
     }
 
     private static void parseFile(String fileName) throws Exception {
